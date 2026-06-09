@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blackwell Systems — AI Infrastructure & Developer Tools</title>
+  <meta name="description" content="Building tools for the agentic AI stack. GCF wire format, agent-lsp, mcp-assert, knowing. Founded by Dayna Blackwell.">
+  <meta property="og:title" content="Blackwell Systems">
+  <meta property="og:description" content="AI Infrastructure & Developer Tools. GCF, agent-lsp, mcp-assert, knowing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://blackwell-systems.com">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Blackwell Systems">
+  <meta name="twitter:description" content="AI Infrastructure & Developer Tools. GCF, agent-lsp, mcp-assert, knowing.">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="canonical" href="https://blackwell-systems.com">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0a0a0a;
+      color: #e8e8e8;
+      line-height: 1.7;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.3rem; color: #fff; }
+    h2 { font-size: 1.4rem; font-weight: 600; margin: 2.5rem 0 1rem; color: #fff; border-bottom: 1px solid #222; padding-bottom: 0.5rem; }
+    h3 { font-size: 1.1rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #ddd; }
+    p { margin-bottom: 1rem; color: #ccc; }
+    a { color: #60a5fa; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    strong { color: #fff; }
+    .subtitle { font-size: 1.1rem; color: #888; margin-bottom: 2rem; }
+    .project { margin-bottom: 2rem; padding: 1.25rem 1.5rem; border: 1px solid #1a1a1a; border-radius: 8px; background: #111; }
+    .project h3 { margin-top: 0; }
+    .project p { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    .project-links { font-size: 0.85rem; color: #888; }
+    .project-links a { color: #60a5fa; }
+    .stat { color: #4ade80; font-weight: 600; }
+    .consulting-box { background: #0f1f0f; border: 1px solid #1a3a1a; border-radius: 8px; padding: 1.5rem; margin: 2rem 0; }
+    .consulting-box h3 { color: #86efac; margin-top: 0; }
+    .consulting-box p { color: #a7f3d0; }
+    .consulting-box a { color: #4ade80; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    th { text-align: left; padding: 0.5rem 0.75rem; background: #111; color: #aaa; font-weight: 600; border-bottom: 1px solid #333; }
+    td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #1a1a1a; }
+    .divider { border: none; border-top: 1px solid #1a1a1a; margin: 2.5rem 0; }
+    footer { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid #1a1a1a; font-size: 0.8rem; color: #555; }
+    footer a { color: #555; }
+  </style>
+</head>
+<body>
+
+  <h1>Blackwell Systems</h1>
+  <p class="subtitle">AI Infrastructure & Developer Tools. Founded by <strong>Dayna Blackwell</strong>.</p>
+
+  <p>Building tools for the agentic AI stack. Wire formats, code intelligence, MCP infrastructure, conformance testing. 27 merged PRs at Anthropic, Google, Grafana, GitHub, LangChain, and others. 5 published research papers with DOIs.</p>
+
+  <hr class="divider">
+
+  <h2>Projects</h2>
+
+  <div class="project">
+    <h3><a href="https://github.com/blackwell-systems/gcf">GCF (Graph Compact Format)</a></h3>
+    <p>Drop-in JSON replacement for AI pipelines. <span class="stat">79% fewer tokens</span>, <span class="stat">90.7% comprehension accuracy</span> where JSON averages 53.6%. 1,300+ evaluations across 10 models and 3 providers. Zero training required.</p>
+    <p>Six language implementations. Wins all 6 datasets on TOON's own benchmark.</p>
+    <p class="project-links">
+      <a href="https://gcformat.com">Docs</a> ·
+      <a href="https://gcformat.com/playground.html">Playground</a> ·
+      <a href="https://gcformat.com/guide/benchmarks.html">Benchmarks</a> ·
+      <a href="https://doi.org/10.5281/zenodo.20579817">Whitepaper</a> ·
+      <a href="https://github.com/blackwell-systems/gcf-proxy">Proxy</a> ·
+      <a href="https://betterthanjson.com">betterthanjson.com</a>
+    </p>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/blackwell-systems/agent-lsp">agent-lsp</a></h3>
+    <p>Code intelligence infrastructure for AI agents. <span class="stat">65 tools</span>, 30 CI-verified languages, 24 agent workflows. Single Go binary. Uses GCF as default output format.</p>
+    <p class="project-links">
+      <a href="https://github.com/blackwell-systems/agent-lsp">Repository</a>
+    </p>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/blackwell-systems/mcp-assert">mcp-assert</a></h3>
+    <p>Conformance testing for MCP servers. <span class="stat">102 servers scanned</span>, 34 bugs found, 12 upstream issues filed. ~28K downloads. Fuzz testing, schema linting, per-assertion Docker isolation.</p>
+    <p class="project-links">
+      <a href="https://github.com/blackwell-systems/mcp-assert">Repository</a> ·
+      <a href="https://blackwell-systems.github.io/mcp-assert/scorecard/">Scorecard</a>
+    </p>
+  </div>
+
+  <div class="project">
+    <h3><a href="https://github.com/blackwell-systems/knowing">knowing</a></h3>
+    <p>Self-adapting code intelligence engine. The system GCF was extracted from. 28 MCP tools, graph-native analysis, session deduplication, content-addressed identity layer.</p>
+    <p class="project-links">
+      <a href="https://github.com/blackwell-systems/knowing">Repository</a> ·
+      <a href="https://doi.org/10.5281/zenodo.20342254">Whitepaper</a>
+    </p>
+  </div>
+
+  <div class="project">
+    <h3>GCP Emulator Suite</h3>
+    <p>Local implementations of Google Cloud APIs for development and CI. No GCP credentials required. Secret Manager has <span class="stat">50K+ downloads</span>, ranked #1 on Google/Bing/DuckDuckGo.</p>
+    <p class="project-links">
+      <a href="https://github.com/blackwell-systems/gcp-secret-manager-emulator">Secret Manager</a> ·
+      <a href="https://github.com/blackwell-systems/gcp-kms-emulator">KMS</a> ·
+      <a href="https://github.com/blackwell-systems/gcp-iam-emulator">IAM</a> ·
+      <a href="https://github.com/blackwell-systems/gcp-eventarc-emulator">Eventarc</a>
+    </p>
+  </div>
+
+  <hr class="divider">
+
+  <h2 id="consulting">Consulting</h2>
+
+  <div class="consulting-box">
+    <h3>MCP Pipeline Optimization & GCF Integration</h3>
+    <p>I'll audit your MCP pipeline, measure your token costs, and integrate GCF. Typical result: 50-79% token reduction with better comprehension accuracy.</p>
+  </div>
+
+  <h3>How it works</h3>
+
+  <p><strong>Free demo:</strong> Run <code style="background:#1a1a1a;padding:2px 6px;border-radius:3px;font-size:0.9rem;color:#f97316;">gcf-proxy --verbose</code> against your MCP server. See your savings in real time.</p>
+
+  <table>
+    <thead>
+      <tr><th>Tier</th><th>What you get</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Pipeline Audit</strong></td><td>Run proxy against your servers, measure per-tool savings, deliver before/after report with token cost analysis</td></tr>
+      <tr><td><strong>Native Integration</strong></td><td>Add GCF encoding directly to your MCP server codebase. Session deduplication, delta encoding, testing, documentation</td></tr>
+      <tr><td><strong>Full Optimization</strong></td><td>Audit all MCP servers and agent workflows. Native integration across multiple servers. Performance benchmarking with your production data. Ongoing support</td></tr>
+    </tbody>
+  </table>
+
+  <p>I'm the creator of GCF and the author of the comprehension benchmark. Nobody else has this expertise.</p>
+
+  <p><strong>Contact:</strong> <a href="mailto:daynajblackwell@gmail.com">daynajblackwell@gmail.com</a></p>
+
+  <hr class="divider">
+
+  <h2>Upstream Contributions</h2>
+
+  <p>27 merged PRs. #6 contributor to <a href="https://github.com/mark3labs/mcp-go">mcp-go</a> (8.7K stars). Data corruption fixes, panic recovery, SDK hardening, spec compliance, transport bugs.</p>
+
+  <table>
+    <thead>
+      <tr><th>Organization</th><th>What</th><th style="text-align:right">Stars</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Anthropic</strong></td><td>MCP Go, Python, PHP SDKs + servers</td><td style="text-align:right">85K+</td></tr>
+      <tr><td><strong>Google</strong></td><td>go-containerregistry (OCI artifact fix)</td><td style="text-align:right">3.8K</td></tr>
+      <tr><td><strong>GitHub</strong></td><td>github-mcp-server</td><td style="text-align:right">16K</td></tr>
+      <tr><td><strong>Grafana</strong></td><td>mcp-grafana (3 PRs merged)</td><td style="text-align:right">2.9K</td></tr>
+      <tr><td><strong>LangChain</strong></td><td>langchain (text splitter fix)</td><td style="text-align:right">136K</td></tr>
+      <tr><td><strong>Stretchr</strong></td><td>testify (suite panic fix)</td><td style="text-align:right">26K</td></tr>
+      <tr><td><strong>etcd</strong></td><td>CNCF (gRPC error code fix)</td><td style="text-align:right">51K</td></tr>
+      <tr><td><strong>mark3labs</strong></td><td>mcp-go SDK (9 PRs, #6 contributor)</td><td style="text-align:right">8.7K</td></tr>
+    </tbody>
+  </table>
+
+  <p><a href="https://blog.blackwell-systems.com/oss#upstream-contributions">Full list</a></p>
+
+  <hr class="divider">
+
+  <h2>Research</h2>
+
+  <p>5 published papers with DOIs.</p>
+
+  <p><strong>Graph Compact Format (GCF)</strong> — <a href="https://doi.org/10.5281/zenodo.20579817">DOI: 10.5281/zenodo.20579817</a><br>
+  A token-efficient wire format for LLM tool interactions. 1,300+ evaluations across 10 models and 3 providers.</p>
+
+  <p><strong>The Hierarchical Identity Architecture</strong> — <a href="https://doi.org/10.5281/zenodo.20342254">DOI: 10.5281/zenodo.20342254</a><br>
+  Content-addressing as a computation primitive for software relationship intelligence.</p>
+
+  <p><strong>Memory Drainability</strong> — <a href="https://doi.org/10.5281/zenodo.18653776">DOI: 10.5281/zenodo.18653776</a><br>
+  Formalizes when coarse-grained allocators can reclaim memory. Validated on Redis.</p>
+
+  <p><strong>Normalization Confluence</strong> — <a href="https://doi.org/10.5281/zenodo.18671870">DOI: 10.5281/zenodo.18671870</a><br>
+  Coordination-free convergence via well-founded compensation.</p>
+
+  <p><strong>Federated Normalization Confluence</strong> — <a href="https://doi.org/10.5281/zenodo.18677400">DOI: 10.5281/zenodo.18677400</a><br>
+  Multi-organizational convergence through morphism validity preservation.</p>
+
+  <footer>
+    &copy; 2026 Dayna Blackwell. <a href="https://github.com/blackwell-systems">GitHub</a> · <a href="https://blog.blackwell-systems.com">Blog</a> · <a href="https://blog.blackwell-systems.com/oss">Open Source</a> · <a href="https://www.linkedin.com/in/daynablackwell/">LinkedIn</a>
+  </footer>
+
+</body>
+</html>
