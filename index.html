@@ -1,533 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blackwell Systems — AI Infrastructure & Developer Tools</title>
-  <meta name="description" content="MCP pipeline optimization and GCF integration consulting. 50-79% token reduction with better comprehension accuracy. Founded by Dayna Blackwell.">
-  <meta property="og:title" content="Blackwell Systems">
-  <meta property="og:description" content="AI Infrastructure & Developer Tools. MCP pipeline optimization. GCF integration consulting.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://blackwell-systems.com">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Blackwell Systems">
-  <meta name="twitter:description" content="AI Infrastructure & Developer Tools. MCP pipeline optimization. GCF integration consulting.">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <link rel="canonical" href="https://blackwell-systems.com">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Blackwell Systems — AI Infrastructure & Consulting</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="MCP pipeline optimization and GCF integration consulting. 50-79% token reduction with better comprehension accuracy. Founded by Dayna Blackwell.">
+    <meta property="og:title" content="Blackwell Systems">
+    <meta property="og:description" content="We cut your MCP token costs by 50-79%. Measurably.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://blackwell-systems.com">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="https://blackwell-systems.com">
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+  <body class="is-preload">
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #09090b;
-      color: #d4d4d8;
-      line-height: 1.7;
-    }
-
-    /* Hero */
-    .hero {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #4ade80;
-      background: rgba(74, 222, 128, 0.1);
-      border: 1px solid rgba(74, 222, 128, 0.2);
-      padding: 0.35rem 1rem;
-      border-radius: 100px;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      color: #fafafa;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .hero h1 .accent { color: #4ade80; }
-
-    .hero .lead {
-      font-size: 1.2rem;
-      color: #a1a1aa;
-      max-width: 600px;
-      margin: 0 auto 2.5rem;
-      line-height: 1.6;
-    }
-
-    .hero-cta {
-      display: inline-block;
-      background: #4ade80;
-      color: #09090b;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.85rem 2.25rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .hero-cta:hover { background: #22c55e; transform: translateY(-1px); text-decoration: none; }
-
-    .hero-secondary {
-      display: inline-block;
-      color: #a1a1aa;
-      font-weight: 500;
-      font-size: 0.95rem;
-      padding: 0.85rem 1.5rem;
-      text-decoration: none;
-      margin-left: 0.75rem;
-    }
-
-    .hero-secondary:hover { color: #fafafa; text-decoration: none; }
-
-    /* Stats bar */
-    .stats-bar {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 2rem 4rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    @media (max-width: 640px) { .stats-bar { grid-template-columns: repeat(2, 1fr); } }
-
-    .stat-item { text-align: center; }
-
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: #fafafa;
-      letter-spacing: -0.02em;
-    }
-
-    .stat-label {
-      font-size: 0.8rem;
-      color: #71717a;
-      margin-top: 0.25rem;
-    }
-
-    /* Sections */
-    .section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3.5rem 2rem;
-    }
-
-    .section-border { border-top: 1px solid #18181b; }
-
-    .section h2 {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #fafafa;
-      margin-bottom: 0.5rem;
-    }
-
-    .section-subtitle {
-      font-size: 0.95rem;
-      color: #71717a;
-      margin-bottom: 2rem;
-    }
-
-    .section h3 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #e4e4e7;
-      margin: 1.5rem 0 0.5rem;
-    }
-
-    /* Project cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-
-    @media (max-width: 640px) { .projects-grid { grid-template-columns: 1fr; } }
-
-    .project {
-      padding: 1.5rem;
-      border: 1px solid #27272a;
-      border-radius: 12px;
-      background: #18181b;
-      transition: border-color 0.2s;
-    }
-
-    .project:hover { border-color: #3f3f46; }
-
-    .project.featured {
-      grid-column: 1 / -1;
-      background: linear-gradient(135deg, #18181b 0%, #1a2e1a 100%);
-      border-color: #1a3a1a;
-    }
-
-    .project h3 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #fafafa;
-      margin: 0 0 0.5rem;
-    }
-
-    .project h3 a { color: #fafafa; text-decoration: none; }
-    .project h3 a:hover { color: #4ade80; }
-
-    .project p {
-      font-size: 0.9rem;
-      color: #a1a1aa;
-      margin-bottom: 0.75rem;
-      line-height: 1.6;
-    }
-
-    .project .stat { color: #4ade80; font-weight: 600; }
-
-    .project-links {
-      font-size: 0.8rem;
-      color: #52525b;
-    }
-
-    .project-links a {
-      color: #60a5fa;
-      text-decoration: none;
-    }
-
-    .project-links a:hover { text-decoration: underline; }
-
-    /* Consulting */
-    .consulting-card {
-      background: linear-gradient(135deg, #09090b 0%, #0f1f0f 100%);
-      border: 1px solid #1a3a1a;
-      border-radius: 12px;
-      padding: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .consulting-card h3 {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #4ade80;
-      margin: 0 0 0.75rem;
-    }
-
-    .consulting-card p {
-      font-size: 1.05rem;
-      color: #86efac;
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-    }
-
-    .consulting-cta {
-      display: inline-block;
-      background: #4ade80;
-      color: #09090b;
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.75rem 2rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-
-    .consulting-cta:hover { background: #22c55e; text-decoration: none; }
-
-    /* Tiers */
-    .tiers {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.25rem;
-      margin: 1.5rem 0;
-    }
-
-    @media (max-width: 640px) { .tiers { grid-template-columns: 1fr; } }
-
-    .tier {
-      padding: 1.5rem;
-      border: 1px solid #27272a;
-      border-radius: 12px;
-      background: #18181b;
-    }
-
-    .tier h4 {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #fafafa;
-      margin-bottom: 0.75rem;
-    }
-
-    .tier p {
-      font-size: 0.85rem;
-      color: #a1a1aa;
-      line-height: 1.6;
-    }
-
-    /* Contributions table */
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      font-size: 0.9rem;
-    }
-
-    th {
-      text-align: left;
-      padding: 0.6rem 0.75rem;
-      background: #18181b;
-      color: #71717a;
-      font-weight: 600;
-      border-bottom: 1px solid #27272a;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    td {
-      padding: 0.6rem 0.75rem;
-      border-bottom: 1px solid #1c1c1e;
-      color: #d4d4d8;
-    }
-
-    /* Research */
-    .research-item {
-      padding: 1.25rem 0;
-      border-bottom: 1px solid #1c1c1e;
-    }
-
-    .research-item:last-child { border-bottom: none; }
-
-    .research-item strong { color: #fafafa; }
-
-    .research-item a { color: #60a5fa; font-size: 0.85rem; }
-
-    .research-item p {
-      font-size: 0.9rem;
-      color: #a1a1aa;
-      margin: 0.25rem 0 0;
-    }
-
-    /* Links */
-    a { color: #60a5fa; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    code {
-      font-family: 'SF Mono', 'Fira Code', monospace;
-      background: #27272a;
-      padding: 0.2rem 0.5rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      color: #f97316;
-    }
-
-    /* Footer */
-    footer {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-      border-top: 1px solid #18181b;
-      font-size: 0.8rem;
-      color: #52525b;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    footer a { color: #52525b; }
-    footer a:hover { color: #a1a1aa; }
-  </style>
-</head>
-<body>
-
-  <!-- Hero -->
-  <div class="hero">
-    <h1>We cut your MCP token costs by <span class="accent">50-79%</span>. Measurably.</h1>
-    <p class="lead">Blackwell Systems builds production-grade developer infrastructure for the agentic AI stack. Founded by Dayna Blackwell, a systems engineer with 5 years of enterprise backend experience operating serverless platforms at scale serving millions of users.</p>
-    <a href="#consulting" class="hero-cta">Get a Free Audit</a>
-    <a href="https://github.com/blackwell-systems" class="hero-secondary">View on GitHub &rarr;</a>
-  </div>
-
-  <!-- Stats -->
-  <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-number">79%</div>
-      <div class="stat-label">fewer tokens than JSON</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">90.7%</div>
-      <div class="stat-label">comprehension accuracy</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">1,300+</div>
-      <div class="stat-label">LLM evaluations</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">27</div>
-      <div class="stat-label">merged upstream PRs</div>
-    </div>
-  </div>
-
-  <!-- Projects -->
-  <div class="section section-border">
-    <h2>Projects</h2>
-    <p class="section-subtitle">Open source infrastructure for the agentic AI stack.</p>
-
-    <div class="projects-grid">
-      <div class="project featured">
-        <h3><a href="https://github.com/blackwell-systems/gcf">GCF (Graph Compact Format)</a></h3>
-        <p>Drop-in JSON replacement for AI pipelines. <span class="stat">79% fewer tokens</span>, <span class="stat">90.7% comprehension accuracy</span> where JSON averages 53.6%. 1,300+ evaluations across 10 models and 3 providers. Six language implementations. Zero training required.</p>
-        <p class="project-links">
-          <a href="https://gcformat.com">Docs</a> ·
-          <a href="https://gcformat.com/playground.html">Playground</a> ·
-          <a href="https://gcformat.com/guide/benchmarks.html">Benchmarks</a> ·
-          <a href="https://doi.org/10.5281/zenodo.20579817">Whitepaper</a> ·
-          <a href="https://github.com/blackwell-systems/gcf-proxy">Proxy</a> ·
-          <a href="https://betterthanjson.com">betterthanjson.com</a>
-        </p>
+    <!-- Sidebar -->
+    <section id="sidebar">
+      <div class="inner">
+        <nav>
+          <ul>
+            <li><a href="#intro">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#consulting">Consulting</a></li>
+            <li><a href="#contributions">Contributions</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
+    </section>
 
-      <div class="project">
-        <h3><a href="https://github.com/blackwell-systems/agent-lsp">agent-lsp</a></h3>
-        <p>Code intelligence for AI agents. <span class="stat">65 tools</span>, 30 languages, 24 workflows. Single Go binary. GCF output by default.</p>
-        <p class="project-links"><a href="https://github.com/blackwell-systems/agent-lsp">Repository</a></p>
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Intro -->
+      <section id="intro" class="wrapper style1 fullscreen fade-up">
+        <div class="inner">
+          <h1>We cut your MCP token costs by <span style="color:#4ade80">50-79%</span>.</h1>
+          <h1>Measurably.</h1>
+          <p>Blackwell Systems builds production-grade developer infrastructure for the agentic AI stack. Founded by Dayna Blackwell, a systems engineer with 5 years of enterprise backend experience operating serverless platforms at scale serving millions of users.</p>
+          <ul class="actions">
+            <li><a href="#consulting" class="button scrolly">Get a Free Audit</a></li>
+            <li><a href="https://github.com/blackwell-systems" class="button scrolly">GitHub</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="wrapper style2 spotlights">
+        <section>
+          <a href="https://github.com/blackwell-systems/gcf" class="image"><img src="images/pic01.jpg" alt="GCF" data-position="center center" /></a>
+          <div class="content">
+            <div class="inner">
+              <h2>GCF (Graph Compact Format)</h2>
+              <p>Drop-in JSON replacement for AI pipelines. 79% fewer tokens, 90.7% comprehension accuracy where JSON averages 53.6%. 1,300+ evaluations across 10 models and 3 providers. Six language implementations. Zero training required.</p>
+              <ul class="actions">
+                <li><a href="https://gcformat.com" class="button">Documentation</a></li>
+                <li><a href="https://gcformat.com/playground.html" class="button">Playground</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <a href="https://github.com/blackwell-systems/agent-lsp" class="image"><img src="images/pic02.jpg" alt="agent-lsp" data-position="top center" /></a>
+          <div class="content">
+            <div class="inner">
+              <h2>agent-lsp</h2>
+              <p>Code intelligence infrastructure for AI agents. 65 tools, 30 CI-verified languages, 24 agent workflows. Single Go binary. Uses GCF as default output format.</p>
+              <ul class="actions">
+                <li><a href="https://github.com/blackwell-systems/agent-lsp" class="button">Repository</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <section>
+          <a href="https://github.com/blackwell-systems/mcp-assert" class="image"><img src="images/pic03.jpg" alt="mcp-assert" data-position="25% 25%" /></a>
+          <div class="content">
+            <div class="inner">
+              <h2>mcp-assert</h2>
+              <p>Conformance testing for MCP servers. 102 servers scanned, 34 bugs found, 12 upstream issues filed. ~28K downloads. Fuzz testing, schema linting, per-assertion Docker isolation.</p>
+              <ul class="actions">
+                <li><a href="https://github.com/blackwell-systems/mcp-assert" class="button">Repository</a></li>
+                <li><a href="https://blackwell-systems.github.io/mcp-assert/scorecard/" class="button">Scorecard</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <!-- Consulting -->
+      <section id="consulting" class="wrapper style3 fade-up">
+        <div class="inner">
+          <h2>Consulting</h2>
+          <p>MCP pipeline optimization and GCF integration. I'm the creator of GCF and the author of the comprehension benchmark. Nobody else has this expertise.</p>
+          <div class="features">
+            <section>
+              <span class="icon solid major fa-bolt"></span>
+              <h3>Pipeline Audit</h3>
+              <p>Run proxy against your servers, measure per-tool savings, deliver before/after report with token cost analysis.</p>
+            </section>
+            <section>
+              <span class="icon solid major fa-code"></span>
+              <h3>Native Integration</h3>
+              <p>Add GCF encoding directly to your MCP server codebase. Session deduplication, delta encoding, testing, documentation.</p>
+            </section>
+            <section>
+              <span class="icon solid major fa-cog"></span>
+              <h3>Full Optimization</h3>
+              <p>Audit all MCP servers and agent workflows. Native integration across multiple servers. Performance benchmarking with your production data. Ongoing support.</p>
+            </section>
+            <section>
+              <span class="icon solid major fa-chart-bar"></span>
+              <h3>The Numbers</h3>
+              <p>79% fewer input tokens. 63% fewer output tokens. 90.7% comprehension accuracy across 10 models. 1,300+ evaluations. Every claim backed by published data.</p>
+            </section>
+            <section>
+              <span class="icon solid major fa-terminal"></span>
+              <h3>Free Demo</h3>
+              <p>Run <code>gcf-proxy --verbose</code> against your MCP server. See your savings in real time. Zero commitment.</p>
+            </section>
+            <section>
+              <span class="icon solid major fa-book"></span>
+              <h3>Research</h3>
+              <p>5 published papers with DOIs. Whitepaper on GCF comprehension methodology. Full eval data and raw logs published.</p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contributions -->
+      <section id="contributions" class="wrapper style1 fade-up">
+        <div class="inner">
+          <h2>Upstream Contributions</h2>
+          <p>27 merged PRs. #6 contributor to mcp-go (8.7K stars). Data corruption fixes, panic recovery, SDK hardening, spec compliance, transport bugs.</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Organization</th><th>What</th><th>Stars</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Anthropic</td><td>MCP Go, Python, PHP SDKs + servers</td><td>85K+</td></tr>
+                <tr><td>Google</td><td>go-containerregistry (OCI artifact fix)</td><td>3.8K</td></tr>
+                <tr><td>GitHub</td><td>github-mcp-server</td><td>16K</td></tr>
+                <tr><td>Grafana</td><td>mcp-grafana (3 PRs merged)</td><td>2.9K</td></tr>
+                <tr><td>LangChain</td><td>langchain (text splitter fix)</td><td>136K</td></tr>
+                <tr><td>Stretchr</td><td>testify (suite panic fix)</td><td>26K</td></tr>
+                <tr><td>etcd</td><td>CNCF (gRPC error code fix)</td><td>51K</td></tr>
+                <tr><td>mark3labs</td><td>mcp-go SDK (9 PRs, #6 contributor)</td><td>8.7K</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <ul class="actions">
+            <li><a href="https://blog.blackwell-systems.com/oss#upstream-contributions" class="button">Full List</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="wrapper style1 fade-up">
+        <div class="inner">
+          <h2>Get in Touch</h2>
+          <p>Interested in optimizing your MCP pipeline? Have questions about GCF? Reach out.</p>
+          <div class="split style1">
+            <section>
+              <ul class="contact">
+                <li>
+                  <h3>Email</h3>
+                  <a href="mailto:dayna@blackwell-systems.com">dayna@blackwell-systems.com</a>
+                </li>
+                <li>
+                  <h3>Social</h3>
+                  <ul class="icons">
+                    <li><a href="https://github.com/blackwell-systems" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/daynablackwell/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <h3>Links</h3>
+                  <a href="https://gcformat.com">gcformat.com</a><br>
+                  <a href="https://blog.blackwell-systems.com">Blog</a><br>
+                  <a href="https://blog.blackwell-systems.com/oss">Open Source</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper style1-alt">
+      <div class="inner">
+        <ul class="menu">
+          <li>&copy; 2026 Dayna Blackwell / Blackwell Systems</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
       </div>
+    </footer>
 
-      <div class="project">
-        <h3><a href="https://github.com/blackwell-systems/mcp-assert">mcp-assert</a></h3>
-        <p>MCP server testing. <span class="stat">102 servers scanned</span>, 34 bugs found. ~28K downloads. Fuzz testing, schema linting.</p>
-        <p class="project-links">
-          <a href="https://github.com/blackwell-systems/mcp-assert">Repository</a> ·
-          <a href="https://blackwell-systems.github.io/mcp-assert/scorecard/">Scorecard</a>
-        </p>
-      </div>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-      <div class="project">
-        <h3><a href="https://github.com/blackwell-systems/knowing">knowing</a></h3>
-        <p>Code intelligence engine. The system GCF was extracted from. 28 MCP tools, content-addressed identity layer.</p>
-        <p class="project-links">
-          <a href="https://github.com/blackwell-systems/knowing">Repository</a> ·
-          <a href="https://doi.org/10.5281/zenodo.20342254">Whitepaper</a>
-        </p>
-      </div>
-
-      <div class="project">
-        <h3>GCP Emulator Suite</h3>
-        <p>Local Google Cloud APIs. No credentials required. Secret Manager: <span class="stat">50K+ downloads</span>, #1 on Google.</p>
-        <p class="project-links">
-          <a href="https://github.com/blackwell-systems/gcp-secret-manager-emulator">Secret Manager</a> ·
-          <a href="https://github.com/blackwell-systems/gcp-kms-emulator">KMS</a> ·
-          <a href="https://github.com/blackwell-systems/gcp-iam-emulator">IAM</a> ·
-          <a href="https://github.com/blackwell-systems/gcp-eventarc-emulator">Eventarc</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Consulting -->
-  <div class="section section-border" id="consulting">
-    <h2>Consulting</h2>
-    <p class="section-subtitle">MCP pipeline optimization and GCF integration.</p>
-
-    <div class="consulting-card">
-      <h3>Cut your token costs by 50-79%</h3>
-      <p>I'll audit your MCP pipeline, measure your actual token costs per tool call, and integrate GCF. You get a before/after report with measurable savings. I'm the creator of GCF and the author of the comprehension benchmark. Nobody else has this expertise.</p>
-      <a href="mailto:dayna@blackwell-systems.com" class="consulting-cta">Get in Touch</a>
-    </div>
-
-    <div class="tiers">
-      <div class="tier">
-        <h4>Pipeline Audit</h4>
-        <p>Run proxy against your servers, measure per-tool savings, deliver before/after report with token cost analysis.</p>
-      </div>
-      <div class="tier">
-        <h4>Native Integration</h4>
-        <p>Add GCF encoding directly to your MCP server codebase. Session deduplication, delta encoding, testing, documentation.</p>
-      </div>
-      <div class="tier">
-        <h4>Full Optimization</h4>
-        <p>Audit all MCP servers and agent workflows. Native integration across multiple servers. Performance benchmarking. Ongoing support.</p>
-      </div>
-    </div>
-
-    <p style="font-size:0.9rem;color:#71717a;margin-top:1rem;"><strong style="color:#d4d4d8;">Free demo:</strong> Run <code>gcf-proxy --verbose</code> against your MCP server. See your savings in real time.</p>
-  </div>
-
-  <!-- Contributions -->
-  <div class="section section-border">
-    <h2>Upstream Contributions</h2>
-    <p class="section-subtitle">27 merged PRs. #6 contributor to mcp-go (8.7K stars). Data corruption fixes, panic recovery, SDK hardening.</p>
-
-    <table>
-      <thead>
-        <tr><th>Organization</th><th>What</th><th style="text-align:right">Stars</th></tr>
-      </thead>
-      <tbody>
-        <tr><td><strong>Anthropic</strong></td><td>MCP Go, Python, PHP SDKs + servers</td><td style="text-align:right">85K+</td></tr>
-        <tr><td><strong>Google</strong></td><td>go-containerregistry (OCI artifact fix)</td><td style="text-align:right">3.8K</td></tr>
-        <tr><td><strong>GitHub</strong></td><td>github-mcp-server</td><td style="text-align:right">16K</td></tr>
-        <tr><td><strong>Grafana</strong></td><td>mcp-grafana (3 PRs merged)</td><td style="text-align:right">2.9K</td></tr>
-        <tr><td><strong>LangChain</strong></td><td>langchain (text splitter fix)</td><td style="text-align:right">136K</td></tr>
-        <tr><td><strong>Stretchr</strong></td><td>testify (suite panic fix)</td><td style="text-align:right">26K</td></tr>
-        <tr><td><strong>etcd</strong></td><td>CNCF (gRPC error code fix)</td><td style="text-align:right">51K</td></tr>
-        <tr><td><strong>mark3labs</strong></td><td>mcp-go SDK (9 PRs, #6 contributor)</td><td style="text-align:right">8.7K</td></tr>
-      </tbody>
-    </table>
-
-    <p style="font-size:0.85rem;"><a href="https://blog.blackwell-systems.com/oss#upstream-contributions">Full list &rarr;</a></p>
-  </div>
-
-  <!-- Research -->
-  <div class="section section-border">
-    <h2>Research</h2>
-    <p class="section-subtitle">5 published papers with DOIs.</p>
-
-    <div class="research-item">
-      <strong>Graph Compact Format (GCF)</strong> · <a href="https://doi.org/10.5281/zenodo.20579817">DOI</a>
-      <p>Token-efficient wire format for LLM tool interactions. 1,300+ evaluations across 10 models.</p>
-    </div>
-
-    <div class="research-item">
-      <strong>The Hierarchical Identity Architecture</strong> · <a href="https://doi.org/10.5281/zenodo.20342254">DOI</a>
-      <p>Content-addressing as a computation primitive for software relationship intelligence.</p>
-    </div>
-
-    <div class="research-item">
-      <strong>Memory Drainability</strong> · <a href="https://doi.org/10.5281/zenodo.18653776">DOI</a>
-      <p>Formalizes when coarse-grained allocators can reclaim memory. Validated on Redis.</p>
-    </div>
-
-    <div class="research-item">
-      <strong>Normalization Confluence</strong> · <a href="https://doi.org/10.5281/zenodo.18671870">DOI</a>
-      <p>Coordination-free convergence via well-founded compensation.</p>
-    </div>
-
-    <div class="research-item">
-      <strong>Federated Normalization Confluence</strong> · <a href="https://doi.org/10.5281/zenodo.18677400">DOI</a>
-      <p>Multi-organizational convergence through morphism validity preservation.</p>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <span>&copy; 2026 Dayna Blackwell / Blackwell Systems</span>
-    <span>
-      <a href="https://github.com/blackwell-systems">GitHub</a> ·
-      <a href="https://blog.blackwell-systems.com">Blog</a> ·
-      <a href="https://blog.blackwell-systems.com/oss">Open Source</a> ·
-      <a href="https://www.linkedin.com/in/daynablackwell/">LinkedIn</a>
-    </span>
-  </footer>
-
-</body>
+  </body>
 </html>
