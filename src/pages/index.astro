@@ -41,7 +41,7 @@ const metadata = {
   <Stats
     stats={[
       { title: 'Fewer tokens than JSON', amount: '79%' },
-      { title: 'Comprehension accuracy', amount: '90.7%' },
+      { title: 'Comprehension accuracy', amount: '100%' },
       { title: 'LLM evaluations', amount: '1,700+' },
       { title: 'Merged upstream PRs', amount: '27' },
     ]}
@@ -133,6 +133,23 @@ const metadata = {
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
+
+  <!-- Cost Calculator -->
+  <section class="py-16 bg-white dark:bg-[#09090b]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+      <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-slate-900 dark:text-white mb-4">How much is JSON costing you?</h2>
+      <p class="text-lg text-slate-500 dark:text-slate-400 mb-8">Plug in your numbers. See what you're losing every month.</p>
+      <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800" style="min-height: 700px;">
+        <iframe src="https://gcformat.com/calculator-embed.html" style="width:100%; height:700px; border:none; background: transparent;" loading="lazy"></iframe>
+      </div>
+      <div class="mt-8">
+        <a href="https://cal.com/blackwell-systems" class="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-400 shadow-xl shadow-primary-500/20 px-8 py-4 text-lg">
+          Book a Free Audit →
+        </a>
+        <p class="text-sm text-slate-500 mt-3">30 minutes. We'll show you your actual savings on your real data.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- How it works -->
   <Steps
