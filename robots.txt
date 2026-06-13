@@ -1,3 +1,4 @@
 User-agent: *
-Allow: /
-Sitemap: https://blackwell-systems.com/sitemap.xml
+Disallow:
+
+Sitemap: https://blackwell-systems.com/sitemap-index.xml
