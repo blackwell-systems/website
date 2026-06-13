@@ -6,7 +6,7 @@ export const headerData = {
     { text: 'Consulting', href: '/#consulting' },
     { text: 'Contributions', href: '/#contributions' },
   ],
-  actions: [{ text: 'Get in Touch', href: 'mailto:dayna@blackwell-systems.com' }],
+  actions: [{ text: 'Book a Call', href: 'https://cal.com/blackwell-systems' }],
 };
 
 export const footerData = {
