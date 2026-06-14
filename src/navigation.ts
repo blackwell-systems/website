@@ -3,7 +3,7 @@ import { getPermalink } from './utils/permalinks';
 export const headerData = {
   links: [
     { text: 'Projects', href: '/#projects' },
-    { text: 'Consulting', href: '/#consulting' },
+    { text: 'Services', href: '/services' },
     { text: 'Contributions', href: '/#contributions' },
   ],
   actions: [{ text: 'Book a Call', href: 'https://cal.com/blackwell-systems' }],
@@ -35,7 +35,7 @@ export const footerData = {
       links: [
         { text: 'GitHub', href: 'https://github.com/blackwell-systems' },
         { text: 'LinkedIn', href: 'https://www.linkedin.com/in/daynablackwell/' },
-        { text: 'Consulting', href: '/#consulting' },
+        { text: 'Services', href: '/services' },
       ],
     },
   ],
