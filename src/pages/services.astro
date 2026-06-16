@@ -8,6 +8,7 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Services — Blackwell Systems',
+  description: 'Full-stack LLM token cost reduction. We audit your AI pipeline and implement 10 techniques that compound to 70-90% savings. Wire format, prompt caching, model routing, RAG optimization, agent loops.',
 };
 ---
 
@@ -24,97 +25,152 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      Reduce your AI token costs. <span class="text-accent dark:text-white">Measurably.</span>
+      Your AI pipeline is spending <span class="text-accent dark:text-white">3-5x more</span> than it needs to.
     </Fragment>
 
     <Fragment slot="subtitle">
-      Four tiers of engagement, from a free 30-minute demo to native format integration.
-      Every recommendation backed by 1,700+ published LLM evaluations. Every claim verifiable on your own data.
+      We audit your full LLM cost stack, identify every source of waste, and implement fixes.
+      10 techniques that compound to 70-90% savings. Every number measured on your data.
     </Fragment>
   </Hero>
 
   <Stats
     stats={[
-      { title: 'Fewer tokens for structured payloads', amount: '71%' },
-      { title: 'Comprehension accuracy', amount: '100%' },
-      { title: 'LLM evaluations', amount: '1,700+' },
-      { title: 'Saved per year', amount: '$61K+' },
+      { title: 'Typical combined savings', amount: '70-90%' },
+      { title: 'Wire format compression', amount: '61-71%' },
+      { title: 'Published LLM evaluations', amount: '1,700+' },
+      { title: 'Techniques in the stack', amount: '10' },
+    ]}
+  />
+
+  <!-- The 10 Techniques -->
+  <Features
+    id="techniques"
+    tagline="The Full Stack"
+    title="10 techniques that compound multiplicatively"
+    subtitle="Most tools optimize one layer. We diagnose which layers matter for your pipeline and implement the full stack."
+    columns={3}
+    items={[
+      {
+        title: 'Prompt Caching',
+        description: 'Restructure prompts for provider-native caching. 90% savings on cached tokens (Anthropic), 50% (OpenAI). Most teams leave this unconfigured.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'Wire Format Compression',
+        description: 'GCF encodes structured data with 61-71% fewer tokens than JSON. Drop-in proxy for zero-code adoption, or native integration for session dedup.',
+        icon: 'tabler:file-code',
+      },
+      {
+        title: 'Model Routing',
+        description: 'Route simple tasks to cheap models, complex tasks to expensive ones. 50-80% cost reduction depending on your query mix.',
+        icon: 'tabler:arrows-sort',
+      },
+      {
+        title: 'RAG Optimization',
+        description: 'Rerank before injection, tune chunk sizes, encode retrieval results. Most teams retrieve 10-20 chunks when 3-5 would suffice.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Batch API',
+        description: '50% discount on any workload that can tolerate 24-hour latency. Classification, extraction, content generation. Free money.',
+        icon: 'tabler:stack-2',
+      },
+      {
+        title: 'Agent Loop Optimization',
+        description: 'Batch tool calls, progressive disclosure, reasoning effort control. Reduce 15 tool calls to 5 with better tool design.',
+        icon: 'tabler:repeat',
+      },
+      {
+        title: 'Session Deduplication',
+        description: 'Track what data the model has already seen. GCF session dedup makes call five 92% smaller than call one.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Prompt Engineering',
+        description: 'Stable prefix design for cache hits, system prompt compression, instruction dedup, few-shot pruning. 30-50% savings from a one-time audit.',
+        icon: 'tabler:pencil',
+      },
+      {
+        title: 'Semantic Caching',
+        description: 'Cache responses for semantically similar queries. 100% savings on cache hits. GPTCache, Upstash, or custom.',
+        icon: 'tabler:cloud',
+      },
+      {
+        title: 'Output Compression',
+        description: 'Control reasoning effort via provider APIs (30-70% fewer output tokens). Structured output constraints. Response format optimization.',
+        icon: 'tabler:arrows-minimize',
+      },
+    ]}
+  />
+
+  <!-- How the math works -->
+  <Steps
+    title="How the savings compound"
+    tagline="Multiplicative, not additive"
+    items={[
+      {
+        title: 'Base cost: $1.00 per session',
+        description: 'Your current cost with no optimization. JSON payloads, no caching, one model, full context on every call.',
+        icon: 'tabler:currency-dollar',
+      },
+      {
+        title: 'After prompt caching: $0.40',
+        description: '60% of your tokens are the cached prefix (system prompt, tool schemas). Anthropic charges 10% on cached tokens.',
+        icon: 'tabler:database',
+      },
+      {
+        title: 'After wire format compression: $0.16',
+        description: 'GCF reduces the remaining structured data by 61%. Tool responses, RAG results, batch payloads.',
+        icon: 'tabler:file-code',
+      },
+      {
+        title: 'After model routing: $0.05',
+        description: '70% of calls routed to a model that costs 80% less. Same quality on simple tasks.',
+        icon: 'tabler:arrows-sort',
+      },
+      {
+        title: 'After batch API: $0.03',
+        description: 'Async workloads moved to batch processing at 50% discount. Your optimized cost per session.',
+        icon: 'tabler:check',
+      },
     ]}
   />
 
   <!-- Service Tiers -->
   <Features
     id="tiers"
-    tagline="How we work"
-    title="Four tiers, one goal: cut your token bill"
-    subtitle="Start with a free demo. Go as deep as the savings justify."
+    tagline="Engagement Model"
+    title="Start with a demo. Go as deep as the savings justify."
     columns={2}
     items={[
       {
         title: 'Free Demo (30 min)',
         description:
-          'We run gcf-proxy against one of your MCP servers, live, on your data. You see per-call token savings in real time. Walk away with a number. Zero commitment, zero code changes.',
+          'We run gcf-proxy against one of your MCP servers, live, on your data. You see per-call token savings in real time. Walk away with a number. Zero commitment.',
         icon: 'tabler:terminal',
         callToAction: { text: 'Book a Demo', href: 'https://cal.com/blackwell-systems' },
       },
       {
         title: 'Token Cost Audit',
         description:
-          'Full pipeline analysis. We measure token flow across every LLM call site: MCP tool responses, RAG context, system prompts, output. You get a written report with per-source savings, a prioritized roadmap, and a 12-month cost projection.',
+          'Full pipeline analysis across all 10 techniques. We instrument your pipeline, measure token flow, and deliver a report with per-source savings, prioritized roadmap, and 12-month cost projection.',
         icon: 'tabler:report-analytics',
         callToAction: { text: 'Book a Call', href: 'https://cal.com/blackwell-systems' },
       },
       {
         title: 'Implementation',
         description:
-          'We deploy the optimizations from the audit. gcf-proxy across your MCP servers, prompt caching configuration, model routing, session deduplication, RAG reranking. Measured before/after on every change.',
+          'We deploy the optimizations from the audit. Prompt restructuring, proxy deployment, model routing, RAG reranking, agent loop redesign. Measured before/after on every change.',
         icon: 'tabler:rocket',
         callToAction: { text: 'Book a Call', href: 'https://cal.com/blackwell-systems' },
       },
       {
         title: 'Native GCF Integration',
         description:
-          'For teams that want GCF in their codebase, not just a proxy. We integrate the GCF library directly into your serialization layer, implement session dedup and delta encoding, and build conformance tests against your actual data shapes. Unlocks 92%+ savings on multi-turn sessions.',
+          'For teams that want maximum savings. GCF library integrated into your serialization layer, session dedup and delta encoding across agent loops, conformance tests against your data. Unlocks 92%+ savings on multi-turn sessions.',
         icon: 'tabler:code',
         callToAction: { text: 'Book a Call', href: 'https://cal.com/blackwell-systems' },
-      },
-    ]}
-  />
-
-  <!-- What the audit covers -->
-  <Steps
-    title="What the audit covers"
-    tagline="Token Cost Audit"
-    items={[
-      {
-        title: 'Input format compression',
-        description: 'Run gcf-proxy against every MCP server. Measure JSON vs GCF token counts on your actual payloads. 61-71% savings typical.',
-        icon: 'tabler:file-code',
-      },
-      {
-        title: 'Prompt caching',
-        description: 'Check if your prompts are structured for provider-native caching. Anthropic offers 90% savings on cached tokens, OpenAI 50%. Many teams leave this unconfigured.',
-        icon: 'tabler:database',
-      },
-      {
-        title: 'Model selection',
-        description: 'Are you running Opus on Haiku tasks? We identify which calls can be routed to cheaper models without quality loss.',
-        icon: 'tabler:arrows-sort',
-      },
-      {
-        title: 'Session deduplication',
-        description: 'In multi-turn agent sessions, the same data gets retransmitted on every call. GCF session dedup sends bare references for known symbols. 92% savings by the 5th call.',
-        icon: 'tabler:refresh',
-      },
-      {
-        title: 'RAG optimization',
-        description: 'Chunk sizing, reranking, and context injection strategy. Most teams retrieve too many chunks. Reranking before injection cuts tokens while improving answer quality.',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Agent loop efficiency',
-        description: 'Unnecessary tool calls, missing batching, redundant reads. We analyze your agent loop and identify where tokens are wasted on round-trip overhead.',
-        icon: 'tabler:repeat',
       },
     ]}
   />
@@ -128,17 +184,17 @@ const metadata = {
     items={[
       {
         title: 'Built the format',
-        description: 'GCF is our format. Six implementations, formal spec, 1 billion+ lossless round-trips. We know every edge case.',
+        description: 'GCF is our format. Six implementations, formal spec, 33 billion+ lossless round-trips across 5 formats and 6 languages.',
         icon: 'tabler:certificate',
       },
       {
         title: 'Proved it works',
-        description: '1,700+ LLM evaluations across 10+ models and 3 providers. 100% comprehension accuracy. Published methodology, published logs.',
+        description: '1,700+ LLM evaluations across 10+ models and 3 providers. 100% comprehension accuracy on every frontier model. Published methodology, published logs.',
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'Vendor-neutral recommendations',
-        description: 'We recommend prompt caching, model routing, and RAG optimization even though we don\'t sell those. The audit is about your savings, not our tools.',
+        title: 'Vendor-neutral',
+        description: 'We recommend prompt caching, model routing, RAG optimization, and batch APIs even though we don\'t sell those. The audit is about your savings, not our tools.',
         icon: 'tabler:shield-check',
       },
     ]}
@@ -166,7 +222,7 @@ const metadata = {
     <Fragment slot="title">Ready to see your savings?</Fragment>
 
     <Fragment slot="subtitle">
-      30 minutes. We run gcf-proxy on your data. You see the numbers. No commitment.
+      30 minutes. Your data. Real numbers. No commitment.
     </Fragment>
   </CallToAction>
 </Layout>
