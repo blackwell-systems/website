@@ -28,22 +28,21 @@ const metadata = {
     ]}
   >
     <Fragment slot="title">
-      We cut your AI token costs by <span class="text-accent dark:text-white">61-71%</span>. Measurably.
+      We cut your AI token costs by <span class="text-accent dark:text-white">70-95%</span>. Measurably.
     </Fragment>
 
     <Fragment slot="subtitle">
-      Blackwell Systems builds production-grade developer infrastructure for the agentic AI stack.
-      Founded by Dayna Blackwell, a systems engineer with 5 years of enterprise backend experience operating serverless platforms at scale serving millions of users.
+      The Token Optimization Stack: 7 layers of compounding cost reduction. Model routing, prompt caching, session dedup, wire format encoding, context filtering, output compression, agent loop architecture. Most teams optimize one layer. We audit all seven.
     </Fragment>
   </Hero>
 
   <!-- Stats -->
   <Stats
     stats={[
-      { title: 'Fewer tokens for your structured payloads', amount: '71%' },
-      { title: 'Comprehension accuracy', amount: '100%' },
-      { title: 'LLM evaluations', amount: '1,700+' },
-      { title: 'Saved per year', amount: '$61K+' },
+      { title: 'Typical combined cost reduction', amount: '70-95%' },
+      { title: 'Optimization layers', amount: '7' },
+      { title: 'LLM evaluations backing our data', amount: '1,700+' },
+      { title: 'Lossless round-trips verified', amount: '43B+' },
     ]}
   />
 
@@ -57,7 +56,7 @@ const metadata = {
       {
         title: 'GCF (Graph Compact Format)',
         description:
-          'The AI-native wire format for structured data. 100% LLM comprehension on every frontier model. 71% fewer tokens than JSON, 25% fewer than TOON. 1,700+ evaluations, 10+ models, 3 providers. Six implementations, bidirectional MCP proxy, 23 billion+ lossless round-trips across 5 formats.',
+          'The AI-native wire format for structured data. 100% LLM comprehension on every frontier model, 90.7% on adversarial payloads. 53-71% fewer tokens than JSON. 1,700+ evaluations, 10+ models, 3 providers. Six implementations, zero runtime dependencies, MCP proxy, 43 billion+ lossless round-trips across 5 formats.',
         icon: 'tabler:file-code',
         callToAction: { text: 'gcformat.com', href: 'https://gcformat.com', target: '_blank' },
       },
@@ -99,29 +98,45 @@ const metadata = {
     ]}
   />
 
-  <!-- Consulting -->
+  <!-- Consulting: Token Optimization Stack -->
   <Content
     id="consulting"
     tagline="Consulting"
-    title="Reduce the cost of running GenAI applications"
+    title="The Token Optimization Stack"
     items={[
       {
-        title: 'Full-Stack Token Cost Audit',
-        description: '10 techniques that compound to 70-90% savings: prompt caching, wire format compression, model routing, RAG optimization, batch API, agent loop design, session dedup, and more. Measured on your data.',
+        title: 'Layer 1: Model Routing',
+        description: 'Route simple tasks to cheap models (80% savings). RouteLLM, LiteLLM, or custom classifiers. Most teams use one model for everything.',
       },
       {
-        title: 'MCP Server Optimization',
-        description: 'Audit and optimize MCP tool responses. Drop-in proxy for immediate 61-71% savings or native GCF integration for session deduplication and delta encoding.',
+        title: 'Layer 2: Transport',
+        description: 'Prompt caching (90% off repeated prefix), batch API (50% off async work), request coalescing. Zero code changes on Anthropic and OpenAI.',
       },
       {
-        title: 'Implementation',
-        description: 'We deploy the optimizations: prompt restructuring, proxy deployment, model routing, RAG reranking, agent loop redesign. Measured before/after on every change.',
+        title: 'Layer 3: Session',
+        description: 'GCF session deduplication: 92% savings by the 5th call. Delta encoding: 81% on re-queries. No other format can do this.',
+      },
+      {
+        title: 'Layer 4: Format',
+        description: 'GCF wire format: 53-71% fewer tokens on structured data. 100% LLM comprehension. Drop-in proxy or native encoding in 6 languages.',
+      },
+      {
+        title: 'Layer 5: Context',
+        description: 'RAG reranking, CLI output filtering (RTK: 60-90% savings), selective tool loading. Send less irrelevant data into the context window.',
+      },
+      {
+        title: 'Layer 6: Output',
+        description: 'Effort parameter (thinking token control), structured outputs, Caveman-style compression. Output tokens cost 3-6x more than input.',
+      },
+      {
+        title: 'Layer 7: Architecture',
+        description: 'Agent loop redesign, task budgets, parallel tool execution, progressive disclosure. The loop is where all optimizations compound most aggressively.',
       },
     ]}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Nobody else has this expertise</h3>
-      I'm the creator of GCF and the author of the comprehension benchmark. Every claim is backed by 1,700+ published evaluations across 10+ models and 3 providers.
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">These layers stack multiplicatively</h3>
+      A $2.28 agent session becomes $0.36 after applying routing + caching + format encoding + effort control. Each layer addresses a different source of waste. Optimizing one does not diminish the opportunity in the others.
     </Fragment>
 
     <Fragment slot="bg">
@@ -149,25 +164,25 @@ const metadata = {
     title="How it works"
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Free Demo</span>',
+        title: 'Step 1: <span class="font-medium">Discovery Call (30 min, free)</span>',
         description:
-          'Run gcf-proxy --verbose against your MCP server or any structured data pipeline. See your actual token savings in real time. Zero commitment, zero code changes.',
-        icon: 'tabler:terminal',
+          'Eight questions that reveal which of the 7 layers are costing you the most. We identify your batch-eligible workload, cache hit rate, routing opportunities, and structured data percentage.',
+        icon: 'tabler:phone',
       },
       {
-        title: 'Step 2: <span class="font-medium">Pipeline Audit</span>',
+        title: 'Step 2: <span class="font-medium">Token Audit (1-2 days)</span>',
         description:
-          'Measure your actual token costs per tool call, per pipeline stage, per session. Deliver a before/after report with measurable savings and ROI calculation.',
+          'Instrument one representative session. Measure total tokens per call, breakdown by category (system prompt vs history vs tool results vs output), cache hit rate, and structured data ratio. Deliver a report with projected savings per layer.',
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'Step 3: <span class="font-medium">Integration</span>',
+        title: 'Step 3: <span class="font-medium">Implement (1-2 weeks)</span>',
         description:
-          'Native GCF encoding in your codebase. Session deduplication, delta encoding, testing, documentation. Or keep the proxy for zero-effort savings.',
+          'Deploy optimizations in priority order: prompt caching (day 1), format encoding (day 2), model routing (day 3-4), output compression (day 5), agent loop redesign (week 2). Measured before/after on every change.',
         icon: 'tabler:code',
       },
       {
-        title: 'Ongoing savings',
+        title: 'Permanent cost reduction',
         icon: 'tabler:check',
       },
     ]}
@@ -232,7 +247,7 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Book a Call',
+        text: 'Book a Free Audit',
         href: 'https://cal.com/blackwell-systems',
         icon: 'tabler:calendar',
       },
@@ -244,10 +259,10 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">Ready to cut your AI token costs?</Fragment>
+    <Fragment slot="title">Spending $5K+/month on LLM APIs?</Fragment>
 
     <Fragment slot="subtitle">
-      Free demo available. Run gcf-proxy against your server and see the savings before committing to anything.
+      Most teams are paying 3-5x more than they need to. We audit all 7 layers, show you the math, and implement the fixes. Typical result: 70-95% cost reduction in 2 weeks.
     </Fragment>
   </CallToAction>
 </Layout>
