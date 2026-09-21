@@ -2,9 +2,10 @@ import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
-    { text: 'Projects', href: '/#projects' },
+    { text: 'Work', href: '/#projects' },
     { text: 'Services', href: '/services' },
-    { text: 'Contributions', href: '/#contributions' },
+    { text: 'About', href: '/about' },
+    { text: 'Contact', href: '/contact' },
   ],
   actions: [{ text: 'Book a Call', href: 'https://cal.com/blackwell-systems' }],
 };
@@ -33,16 +34,18 @@ export const footerData = {
     {
       title: 'Company',
       links: [
-        { text: 'GitHub', href: 'https://github.com/blackwell-systems' },
-        { text: 'LinkedIn', href: 'https://www.linkedin.com/in/daynablackwell/' },
         { text: 'Services', href: '/services' },
+        { text: 'About', href: '/about' },
+        { text: 'Contact', href: '/contact' },
+        { text: 'GitHub', href: 'https://github.com/blackwell-systems' },
+        { text: 'LinkedIn', href: 'https://www.linkedin.com/in/dayna-blackwell/' },
       ],
     },
   ],
   secondaryLinks: [],
   socialLinks: [
     { ariaLabel: 'GitHub', icon: 'tabler:brand-github', href: 'https://github.com/blackwell-systems' },
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/daynablackwell/' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/in/dayna-blackwell/' },
   ],
   footNote: `
     &copy; 2026 Dayna Blackwell / Blackwell Systems. All rights reserved.
