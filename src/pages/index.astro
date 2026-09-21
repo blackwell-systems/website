@@ -42,7 +42,7 @@ const metadata = {
     stats={[
       { title: 'GCF comprehension evals', amount: '1,700+' },
       { title: 'GCF implementations', amount: '7' },
-      { title: 'Upstream PRs merged', amount: '27' },
+      { title: 'Upstream PRs merged', amount: '40+' },
       { title: 'Typical token savings', amount: '70-90%' },
     ]}
   />
@@ -229,38 +229,38 @@ const metadata = {
   <Features
     id="contributions"
     tagline="Upstream"
-    title="27 merged PRs across the ecosystem"
-    subtitle="#6 contributor to mcp-go (8.7K stars). Data corruption fixes, panic recovery, SDK hardening, spec compliance, transport bugs."
+    title="40+ merged PRs across the ecosystem"
+    subtitle="Bug fixes, hardening, and features merged into open-source projects across the stack. #6 all-time contributor to mcp-go."
     items={[
       {
-        title: 'Anthropic',
-        description: 'MCP Go, Python, PHP SDKs + servers (85K+ stars)',
-        icon: 'tabler:brand-github',
+        title: 'mcp-go',
+        description: '#6 all-time contributor. 9 merged PRs: panic recovery, goroutine-leak fixes, and reliability across the SSE and stdio handlers.',
+        icon: 'tabler:trophy',
+      },
+      {
+        title: 'Model Context Protocol',
+        description: 'Merged fixes across the official MCP SDKs (PHP, Python, Go): schema corrections, exception chaining, and transport handling.',
+        icon: 'tabler:plug',
       },
       {
         title: 'Google',
-        description: 'go-containerregistry: OCI artifact corruption fix (3.8K stars)',
+        description: 'go-containerregistry: fixed OCI artifact corruption in mutate, added a round-trip test, and corrected registry name parsing.',
         icon: 'tabler:brand-google',
       },
       {
-        title: 'GitHub',
-        description: 'github-mcp-server (16K stars)',
-        icon: 'tabler:brand-github',
-      },
-      {
         title: 'Grafana',
-        description: '3 PRs merged: feature + panic fix + error propagation (74K stars)',
+        description: 'mcp-grafana: a Sift panic fix, timestamp validation, and a feature building server instructions from enabled tool categories.',
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'etcd (CNCF)',
-        description: 'gRPC error code fix (51K stars)',
-        icon: 'tabler:database',
+        title: 'HashiCorp',
+        description: 'terraform-provider-aws: handle the UnsupportedOperationException path in Directory Service so applies stop failing.',
+        icon: 'tabler:cloud',
       },
       {
-        title: 'mark3labs (mcp-go)',
-        description: '9 PRs merged, #6 all-time contributor (8.7K stars)',
-        icon: 'tabler:trophy',
+        title: 'Core libraries',
+        description: 'Targeted fixes to widely used projects: pip (PyPA) encoding, a testify suite panic, go-openai stream serialization, and a LangChain text-splitter bug.',
+        icon: 'tabler:packages',
       },
     ]}
   >
@@ -274,7 +274,7 @@ const metadata = {
     stats={[
       { title: 'Monthly ecosystem downloads', amount: '150K+' },
       { title: 'Open source projects', amount: '20+' },
-      { title: 'Upstream PRs merged', amount: '27' },
+      { title: 'Upstream PRs merged', amount: '40+' },
       { title: 'Research papers', amount: '9' },
     ]}
   />
