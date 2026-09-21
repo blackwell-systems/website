@@ -20,29 +20,63 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Book a Free Audit',
+        text: 'Book a call',
         href: 'https://cal.com/blackwell-systems',
         icon: 'tabler:bolt',
       },
-      { text: 'View on GitHub', href: 'https://github.com/blackwell-systems', target: '_blank', icon: 'tabler:brand-github' },
+      { variant: 'secondary', text: 'See services', href: '/services' },
     ]}
   >
     <Fragment slot="title">
-      We cut your AI token costs by <span class="text-accent dark:text-white">70-95%</span>. Measurably.
+      Independent technical judgment for your <span class="text-accent dark:text-white">AI stack</span>.
     </Fragment>
 
     <Fragment slot="subtitle">
-      The Token Optimization Stack: 7 layers of compounding cost reduction. Model routing, prompt caching, session dedup, wire format encoding, context filtering, output compression, agent loop architecture. Most teams optimize one layer. We audit all seven.
+      The outside read a team brings in to answer three questions: is it real, should you build or buy it, and
+      what is it costing you. Fractional CTO, technical due diligence, and AI cost optimization, each backed by
+      published evidence and verifiable on your own data.
     </Fragment>
   </Hero>
 
   <!-- Stats -->
   <Stats
     stats={[
-      { title: 'Typical combined cost reduction', amount: '70-95%' },
-      { title: 'Optimization layers', amount: '7' },
-      { title: 'LLM evaluations backing our data', amount: '1,700+' },
-      { title: 'Lossless round-trips verified', amount: '43B+' },
+      { title: 'Published LLM evaluations', amount: '1,700+' },
+      { title: 'GCF implementations', amount: '6' },
+      { title: 'Upstream PRs merged', amount: '27' },
+      { title: 'Typical token savings', amount: '70-90%' },
+    ]}
+  />
+
+  <!-- The three services -->
+  <Features
+    id="services"
+    tagline="How I work"
+    title="Three services, one method"
+    subtitle="One method underneath all three: evidence-first, verifiable, reproducible. Every recommendation is backed by published work and checked on your own data, not asserted."
+    columns={3}
+    items={[
+      {
+        title: 'Fractional CTO (AI)',
+        description:
+          'Embedded technical leadership for AI-heavy teams: strategy and roadmap, build-versus-buy and vendor decisions, architecture, engineering process, AI cost, and the technical narrative for a raise. The judgment a company needs before it hires a full-time CTO.',
+        icon: 'tabler:compass',
+        callToAction: { text: 'Fractional CTO', href: '/services#fractional-cto' },
+      },
+      {
+        title: 'Technical due diligence (AI)',
+        description:
+          'Independent evaluation of an AI claim or vendor: is the advantage real, and should you buy, build, or own it. A claim-verification engine and a vendor-evaluation framework, delivered as a decision memo with economics and risk.',
+        icon: 'tabler:microscope',
+        callToAction: { text: 'Due diligence', href: '/services#diligence' },
+      },
+      {
+        title: 'AI cost optimization',
+        description:
+          'Cut your LLM bill without losing quality. A full-stack audit across techniques that compound to 70-90% savings, every number measured on your data.',
+        icon: 'tabler:coin',
+        callToAction: { text: 'The full stack', href: '/services#token-optimization' },
+      },
     ]}
   />
 
@@ -100,9 +134,10 @@ const metadata = {
 
   <!-- Consulting: Token Optimization Stack -->
   <Content
-    id="consulting"
-    tagline="Consulting"
+    id="token-optimization"
+    tagline="AI cost optimization"
     title="The Token Optimization Stack"
+    subtitle="One of the three services, in depth. Seven layers of compounding cost reduction, each measured on your own pipeline."
     items={[
       {
         title: 'Layer 1: Model Routing',
@@ -247,22 +282,23 @@ const metadata = {
     actions={[
       {
         variant: 'primary',
-        text: 'Book a Free Audit',
+        text: 'Book a call',
         href: 'https://cal.com/blackwell-systems',
         icon: 'tabler:calendar',
       },
       {
-        text: 'View Projects',
-        href: 'https://github.com/blackwell-systems',
-        target: '_blank',
-        icon: 'tabler:brand-github',
+        text: 'See services',
+        href: '/services',
+        icon: 'tabler:arrow-right',
       },
     ]}
   >
-    <Fragment slot="title">Spending $5K+/month on LLM APIs?</Fragment>
+    <Fragment slot="title">Need an outside technical read?</Fragment>
 
     <Fragment slot="subtitle">
-      Most teams are paying 3-5x more than they need to. We audit all 7 layers, show you the math, and implement the fixes. Typical result: 70-95% cost reduction in 2 weeks.
+      Whether the question is a full-time-CTO-level call, a vendor or claim to verify, or an LLM bill that
+      is too high, the work is the same: independent judgment, backed by published evidence and checked on
+      your own data. Book a call and tell me the question.
     </Fragment>
   </CallToAction>
 </Layout>
