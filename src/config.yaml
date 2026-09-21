@@ -9,16 +9,16 @@ metadata:
   title:
     default: Blackwell Systems
     template: '%s — Blackwell Systems'
-  description: "AI Infrastructure & Consulting. We cut your AI token costs by 50-79%. GCF wire format, agent-lsp, mcp-assert, knowing. Founded by Dayna Blackwell."
+  description: "Independent, evidence-first technical judgment: fractional CTO, technical due diligence, and AI cost optimization. Built and proven in the open by Dayna Blackwell, founder of Blackwell Systems."
   robots:
     index: true
     follow: true
   openGraph:
     site_name: Blackwell Systems
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/og-image.png'
         width: 1200
-        height: 628
+        height: 630
     type: website
   twitter:
     cardType: summary_large_image
