@@ -1,0 +1,15 @@
+{
+  "name": "blackwell-contact",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Contact-form Worker for blackwell-systems.com",
+  "scripts": {
+    "deploy": "wrangler deploy",
+    "dev": "wrangler dev",
+    "tail": "wrangler tail",
+    "whoami": "wrangler whoami"
+  },
+  "devDependencies": {
+    "wrangler": "^4"
+  }
+}

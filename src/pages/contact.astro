@@ -1,79 +1,159 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
-import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact — Blackwell Systems',
+  description:
+    'Bring in an independent, evidence-first technical read: fractional CTO, technical due diligence, or AI cost optimization.',
 };
+
+// Public Turnstile site key. Create a widget in the Cloudflare dashboard
+// (Turnstile -> Add widget) and paste the SITE key here. See worker/README.md.
+const TURNSTILE_SITE_KEY = '0x4AAAAAAE-cmZsa9amJY-Bl';
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
+  <HeroText tagline="Contact" title="Let's connect" />
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <section class="px-4 sm:px-6 pb-16">
+    <div class="mx-auto max-w-2xl">
+      <p class="text-lg text-gray-600 dark:text-slate-400 mb-8 text-center">
+        Tell me what you're weighing: a build-or-buy call, a claim to verify, an LLM bill to cut, or a
+        fractional-CTO seat. Send the details and I'll reply.
+      </p>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+      <form
+        id="contact-form"
+        novalidate
+        class="rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 p-6 sm:p-8 shadow-sm"
+      >
+        <div class="mb-5">
+          <label for="name" class="block text-sm font-medium mb-1">Name</label>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            required
+            autocomplete="name"
+            class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent px-4 py-3 text-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+          />
+        </div>
 
-  <!-- Features2 Widget ************** -->
+        <div class="mb-5">
+          <label for="email" class="block text-sm font-medium mb-1">Email</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autocomplete="email"
+            class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent px-4 py-3 text-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+          />
+        </div>
 
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+        <div class="mb-5">
+          <label for="message" class="block text-sm font-medium mb-1">What are you working on?</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            required
+            class="w-full rounded-lg border border-gray-300 dark:border-gray-600 bg-transparent px-4 py-3 text-md focus:outline-none focus:ring-2 focus:ring-primary-500"
+          ></textarea>
+        </div>
+
+        <!-- Honeypot: off-screen, hidden from people, tempting to bots. -->
+        <div aria-hidden="true" style="position:absolute; left:-9999px; top:-9999px;">
+          <label for="company">Company</label>
+          <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="cf-turnstile mb-5" data-sitekey={TURNSTILE_SITE_KEY}></div>
+
+        <button
+          id="submit-btn"
+          type="submit"
+          class="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-400 shadow-lg shadow-primary-500/20 px-8 py-3 text-md w-full sm:w-auto"
+        >
+          Send
+        </button>
+
+        <p id="form-status" role="status" aria-live="polite" class="mt-4 text-sm"></p>
+      </form>
+
+      <p class="mt-8 text-center text-gray-600 dark:text-slate-400">
+        Prefer email?
+        <a class="text-primary-600 dark:text-primary-400 underline" href="mailto:dayna@blackwell-systems.com"
+          >dayna@blackwell-systems.com</a
+        >
+        &nbsp;·&nbsp; Prefer a call?
+        <a class="text-primary-600 dark:text-primary-400 underline" href="https://cal.com/blackwell-systems"
+          >cal.com/blackwell-systems</a
+        >
+      </p>
+    </div>
+  </section>
+
+  <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      var statusEl = document.getElementById('form-status');
+      var submitBtn = document.getElementById('submit-btn');
+      var FALLBACK = 'Please email dayna@blackwell-systems.com directly.';
+
+      function show(msg, ok) {
+        statusEl.textContent = msg;
+        statusEl.style.color = ok ? '#16a34a' : '#dc2626';
+      }
+
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        show('', true);
+
+        var tokenEl = form.querySelector('[name="cf-turnstile-response"]');
+        var payload = {
+          name: document.getElementById('name').value.trim(),
+          email: document.getElementById('email').value.trim(),
+          message: document.getElementById('message').value.trim(),
+          company: document.getElementById('company').value.trim(),
+          turnstileToken: tokenEl ? tokenEl.value : '',
+        };
+
+        if (!payload.name || !payload.email || !payload.message) {
+          show('Please fill in every field.', false);
+          return;
+        }
+
+        submitBtn.disabled = true;
+        var original = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+
+        try {
+          var res = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          var out = await res.json().catch(function () {
+            return {};
+          });
+          if (res.ok && out.ok) {
+            form.reset();
+            show("Thanks. Your message is on its way, I'll be in touch soon.", true);
+          } else {
+            show(out.error || 'Something went wrong. ' + FALLBACK, false);
+          }
+        } catch (err) {
+          show('Network error. ' + FALLBACK, false);
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = original;
+          if (window.turnstile) window.turnstile.reset();
+        }
+      });
+    })();
+  </script>
 </Layout>

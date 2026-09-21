@@ -1,0 +1,21 @@
+name = "blackwell-contact"
+main = "index.js"
+compatibility_date = "2024-11-01"
+
+# Same-origin route. Requires the blackwell-systems.com record that serves the
+# site to be PROXIED through Cloudflare (orange cloud). If it is DNS-only (grey),
+# the route will not intercept: proxy it, or move the Worker to a dedicated
+# proxied subdomain (e.g. api.blackwell-systems.com) and point the form fetch there.
+routes = [
+  { pattern = "blackwell-systems.com/api/contact", zone_name = "blackwell-systems.com" }
+]
+
+[vars]
+TO_EMAIL = "dayna@blackwell-systems.com"
+# FROM_ADDRESS must be on a domain/subdomain verified in ZeptoMail. A send-only
+# subdomain keeps this off the Zoho MX that receives your real mail.
+FROM_ADDRESS = "contact@send.blackwell-systems.com"
+FROM_NAME = "Blackwell Systems"
+# US data center. If your Zoho/ZeptoMail account is EU/IN/AU, change the host
+# (e.g. https://api.zeptomail.eu/v1.1/email). The ZeptoMail dashboard shows yours.
+ZEPTO_API_URL = "https://api.zeptomail.com/v1.1/email"
