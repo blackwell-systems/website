@@ -1,6 +1,6 @@
 // Contact-form Worker for blackwell-systems.com
 //
-// Flow: validate -> honeypot -> Turnstile verify -> send via Resend -> JSON.
+// Flow: rate limit -> honeypot -> validate -> Turnstile verify -> send via ZeptoMail -> JSON.
 // Routed at blackwell-systems.com/api/contact (see wrangler.toml).
 //
 // Secrets (set with `wrangler secret put`):
