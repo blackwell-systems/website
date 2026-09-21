@@ -8,47 +8,155 @@ import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Services — Blackwell Systems',
-  description: 'Full-stack LLM token cost reduction. We audit your AI pipeline and implement 10 techniques that compound to 70-90% savings. Wire format, prompt caching, model routing, RAG optimization, agent loops.',
+  description:
+    'Independent, evidence-first technical judgment for AI systems: fractional CTO, technical due diligence, and AI cost optimization. Every recommendation backed by published evaluations and verifiable on your own data.',
 };
+
+const CAL = 'https://cal.com/blackwell-systems';
 ---
 
 <Layout metadata={metadata}>
   <Hero
     tagline="Services"
     actions={[
-      {
-        variant: 'primary',
-        text: 'Book a Free Demo',
-        href: 'https://cal.com/blackwell-systems',
-        icon: 'tabler:bolt',
-      },
+      { variant: 'primary', text: 'Book a call', href: CAL, icon: 'tabler:bolt' },
+      { variant: 'secondary', text: 'Get in touch', href: '/contact' },
     ]}
   >
     <Fragment slot="title">
-      Your AI pipeline is spending <span class="text-accent dark:text-white">3-5x more</span> than it needs to.
+      Independent technical judgment for your <span class="text-accent dark:text-white">AI stack</span>.
     </Fragment>
 
     <Fragment slot="subtitle">
-      We audit your full LLM cost stack, identify every source of waste, and implement fixes.
-      10 techniques that compound to 70-90% savings. Every number measured on your data.
+      The outside technical read a team brings in to answer three questions: is it real, should you build or
+      buy it, and what is it costing you. Fractional CTO, technical due diligence, and AI cost optimization,
+      each backed by published evidence and verifiable on your own data.
     </Fragment>
   </Hero>
 
   <Stats
     stats={[
-      { title: 'Typical combined savings', amount: '70-90%' },
-      { title: 'Wire format compression', amount: '61-71%' },
       { title: 'Published LLM evaluations', amount: '1,700+' },
-      { title: 'Techniques in the stack', amount: '10' },
+      { title: 'GCF implementations', amount: '6' },
+      { title: 'Languages shipped', amount: '6' },
+      { title: 'Typical token savings', amount: '70-90%' },
     ]}
   />
 
-  <!-- The 10 Techniques -->
+  <!-- The three services -->
   <Features
-    id="techniques"
-    tagline="The Full Stack"
+    id="services"
+    tagline="How I work"
+    title="Three services, one method"
+    subtitle="One method underneath all three: evidence-first, verifiable, reproducible. Every recommendation is backed by published work and checked on your own data, not asserted."
+    columns={3}
+    items={[
+      {
+        title: 'Fractional CTO (AI)',
+        description:
+          'Embedded technical leadership for AI-heavy teams: strategy and roadmap, build-versus-buy and vendor decisions, architecture, engineering process, AI cost, and the technical narrative for a raise. The judgment a company needs before it hires a full-time CTO.',
+        icon: 'tabler:compass',
+        callToAction: { text: 'Fractional CTO', href: '#fractional-cto' },
+      },
+      {
+        title: 'Technical due diligence (AI)',
+        description:
+          'Independent evaluation of an AI claim or vendor: is the advantage real, and should you buy, build, or own it. Two reinforcing methods, a claim-verification engine and a vendor-evaluation framework, delivered as a decision memo with economics and risk.',
+        icon: 'tabler:microscope',
+        callToAction: { text: 'Due diligence', href: '#diligence' },
+      },
+      {
+        title: 'AI cost optimization',
+        description:
+          'Cut your LLM bill without losing quality. A full-stack audit across ten techniques that compound to 70-90% savings, every number measured on your data.',
+        icon: 'tabler:coin',
+        callToAction: { text: 'The full stack', href: '#token-optimization' },
+      },
+    ]}
+  />
+
+  <!-- Fractional CTO -->
+  <Features
+    id="fractional-cto"
+    tagline="Fractional CTO"
+    title="The judgment before the full-time hire"
+    subtitle="Brought in as a service, a few hours a week or for a defined project. CTO-level decisions without the full-time cost, with honest scope: I own the technical calls and guide your team, and I am direct about what is decision work versus hands-on build."
+    columns={3}
+    items={[
+      {
+        title: 'Strategy and roadmap',
+        description: 'Align the technical direction to the business, set the roadmap, and make the big architecture calls.',
+        icon: 'tabler:map',
+      },
+      {
+        title: 'Build, buy, or own',
+        description: 'Evaluate technologies and vendors, run build-versus-buy, and decide what to own versus rent.',
+        icon: 'tabler:scale',
+      },
+      {
+        title: 'Architecture and scale',
+        description: 'System design, reliability, security posture, and paying down the tech debt that slows delivery.',
+        icon: 'tabler:topology-star',
+      },
+      {
+        title: 'AI systems and cost',
+        description: 'AI strategy, model and vendor selection, and keeping the AI bill sane as you scale.',
+        icon: 'tabler:cpu',
+      },
+      {
+        title: 'Team and process',
+        description: 'Engineering process, hiring guidance, and leveling up the people you already have.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Fundraising support',
+        description: 'The technical narrative for a raise, and answering investor technical due diligence from the technical seat.',
+        icon: 'tabler:presentation',
+      },
+    ]}
+  />
+
+  <!-- Technical due diligence -->
+  <Features
+    id="diligence"
+    tagline="Technical due diligence"
+    title="Is the claim real. Should you buy, build, or own it."
+    subtitle="Independent, from public materials unless you grant access, with no stake in the vendor. Every finding traces to evidence and reproduces."
+    columns={2}
+    items={[
+      {
+        title: 'Claim verification (the engine)',
+        description:
+          'For computational-advantage and compute-primitive claims: independent ground truth, classical-solver baselines, and a battery covering attribution, determinism, mechanism, scaling, fair comparison, and correctness. Does the advantage actually hold.',
+        icon: 'tabler:microscope',
+      },
+      {
+        title: 'Vendor evaluation (the method)',
+        description:
+          'For a buy-or-build decision on an AI product: the real peer class, the same-task comparison the vendor avoids, mechanism versus model, and the own-versus-rent economics.',
+        icon: 'tabler:checklist',
+      },
+      {
+        title: 'What you get',
+        description:
+          'A decision memo with a clear recommendation, a rent-versus-build cost model, a risk register, and a methodology note stating scope and confidence. Written to be acted on.',
+        icon: 'tabler:file-text',
+      },
+      {
+        title: 'Independence',
+        description:
+          'Public materials, no stake, and a standing commitment to revise on new evidence. The assessment is worth paying for because it is not sold to a conclusion.',
+        icon: 'tabler:shield-check',
+      },
+    ]}
+  />
+
+  <!-- AI cost optimization: the ten techniques -->
+  <Features
+    id="token-optimization"
+    tagline="AI cost optimization"
     title="10 techniques that compound multiplicatively"
-    subtitle="Most tools optimize one layer. We diagnose which layers matter for your pipeline and implement the full stack."
+    subtitle="Most tools optimize one layer. I diagnose which layers matter for your pipeline and implement the full stack."
     columns={3}
     items={[
       {
@@ -137,10 +245,10 @@ const metadata = {
     ]}
   />
 
-  <!-- Service Tiers -->
+  <!-- AI cost optimization tiers -->
   <Features
     id="tiers"
-    tagline="Engagement Model"
+    tagline="Engagement model"
     title="Start with a demo. Go as deep as the savings justify."
     columns={2}
     items={[
@@ -149,37 +257,37 @@ const metadata = {
         description:
           'We run gcf-proxy against one of your MCP servers, live, on your data. You see per-call token savings in real time. Walk away with a number. Zero commitment.',
         icon: 'tabler:terminal',
-        callToAction: { text: 'Book a Demo', href: 'https://cal.com/blackwell-systems' },
+        callToAction: { text: 'Book a demo', href: CAL },
       },
       {
         title: 'Token Cost Audit',
         description:
           'Full pipeline analysis across all 10 techniques. We instrument your pipeline, measure token flow, and deliver a report with per-source savings, prioritized roadmap, and 12-month cost projection.',
         icon: 'tabler:report-analytics',
-        callToAction: { text: 'Book a Call', href: 'https://cal.com/blackwell-systems' },
+        callToAction: { text: 'Book a call', href: CAL },
       },
       {
         title: 'Implementation',
         description:
           'We deploy the optimizations from the audit. Prompt restructuring, proxy deployment, model routing, RAG reranking, agent loop redesign. Measured before/after on every change.',
         icon: 'tabler:rocket',
-        callToAction: { text: 'Book a Call', href: 'https://cal.com/blackwell-systems' },
+        callToAction: { text: 'Book a call', href: CAL },
       },
       {
         title: 'Native GCF Integration',
         description:
           'For teams that want maximum savings. GCF library integrated into your serialization layer, session dedup and delta encoding across agent loops, conformance tests against your data. Unlocks 92%+ savings on multi-turn sessions.',
         icon: 'tabler:code',
-        callToAction: { text: 'Book a Call', href: 'https://cal.com/blackwell-systems' },
+        callToAction: { text: 'Book a call', href: CAL },
       },
     ]}
   />
 
-  <!-- Why us -->
+  <!-- Why Blackwell Systems -->
   <Features
     id="why"
     tagline="Why Blackwell Systems"
-    title="Nobody else has this expertise"
+    title="Evidence you can check"
     columns={3}
     items={[
       {
@@ -193,8 +301,8 @@ const metadata = {
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'Vendor-neutral',
-        description: 'We recommend prompt caching, model routing, RAG optimization, and batch APIs even though we don\'t sell those. The audit is about your savings, not our tools.',
+        title: 'Independent by default',
+        description: 'The recommendation is not sold to a conclusion. I advise prompt caching, model routing, and batch APIs even though I do not sell them, and diligence is run from public materials with no stake in the vendor.',
         icon: 'tabler:shield-check',
       },
     ]}
@@ -211,18 +319,14 @@ const metadata = {
 
   <CallToAction
     actions={[
-      {
-        variant: 'primary',
-        text: 'Book a Free Demo',
-        href: 'https://cal.com/blackwell-systems',
-        icon: 'tabler:calendar',
-      },
+      { variant: 'primary', text: 'Book a call', href: CAL, icon: 'tabler:calendar' },
+      { variant: 'secondary', text: 'Get in touch', href: '/contact' },
     ]}
   >
-    <Fragment slot="title">Ready to see your savings?</Fragment>
+    <Fragment slot="title">Bring in an outside technical read.</Fragment>
 
     <Fragment slot="subtitle">
-      30 minutes. Your data. Real numbers. No commitment.
+      A short call, or send the details. Independent, evidence-first, and honest about what is worth building.
     </Fragment>
   </CallToAction>
 </Layout>
