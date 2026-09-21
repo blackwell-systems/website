@@ -36,6 +36,15 @@ export default {
       return json({ ok: false, error: 'Method not allowed' }, 405);
     }
 
+    // Per-IP burst limit (on top of Turnstile). Shed abusive load early.
+    const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+    if (env.RATE_LIMITER) {
+      const { success } = await env.RATE_LIMITER.limit({ key: ip });
+      if (!success) {
+        return json({ ok: false, error: 'Too many attempts. Please wait a minute and try again.' }, 429);
+      }
+    }
+
     let body;
     try {
       body = await request.json();
@@ -65,7 +74,6 @@ export default {
     }
 
     // Verify Turnstile.
-    const ip = request.headers.get('CF-Connecting-IP') || '';
     const verifyRes = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
