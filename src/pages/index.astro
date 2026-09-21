@@ -133,51 +133,54 @@ const metadata = {
   />
 
   <!-- Consulting: Token Optimization Stack -->
-  <Content
+  <Features
     id="token-optimization"
     tagline="AI cost optimization"
     title="The Token Optimization Stack"
-    subtitle="One of the three services, in depth. Seven layers of compounding cost reduction, each measured on your own pipeline."
+    subtitle="One of the three services, in depth. Seven layers of compounding cost reduction, each measured on your own pipeline. They stack multiplicatively: a $2.28 agent session becomes $0.36 after routing, caching, format encoding, and effort control."
+    columns={3}
     items={[
       {
         title: 'Layer 1: Model Routing',
         description: 'Route simple tasks to cheap models (80% savings). RouteLLM, LiteLLM, or custom classifiers. Most teams use one model for everything.',
+        icon: 'tabler:arrows-sort',
       },
       {
         title: 'Layer 2: Transport',
         description: 'Prompt caching (90% off repeated prefix), batch API (50% off async work), request coalescing. Zero code changes on Anthropic and OpenAI.',
+        icon: 'tabler:arrows-exchange',
       },
       {
         title: 'Layer 3: Session',
         description: 'GCF session deduplication: 92% savings by the 5th call. Delta encoding: 81% on re-queries. No other format can do this.',
+        icon: 'tabler:refresh',
       },
       {
         title: 'Layer 4: Format',
         description: 'GCF wire format: 53-71% fewer tokens on structured data. 100% LLM comprehension. Drop-in proxy or native encoding in 6 languages.',
+        icon: 'tabler:file-code',
       },
       {
         title: 'Layer 5: Context',
         description: 'RAG reranking, CLI output filtering (RTK: 60-90% savings), selective tool loading. Send less irrelevant data into the context window.',
+        icon: 'tabler:search',
       },
       {
         title: 'Layer 6: Output',
         description: 'Effort parameter (thinking token control), structured outputs, Caveman-style compression. Output tokens cost 3-6x more than input.',
+        icon: 'tabler:arrows-minimize',
       },
       {
         title: 'Layer 7: Architecture',
         description: 'Agent loop redesign, task budgets, parallel tool execution, progressive disclosure. The loop is where all optimizations compound most aggressively.',
+        icon: 'tabler:topology-star',
       },
     ]}
   >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">These layers stack multiplicatively</h3>
-      A $2.28 agent session becomes $0.36 after applying routing + caching + format encoding + effort control. Each layer addresses a different source of waste. Optimizing one does not diminish the opportunity in the others.
-    </Fragment>
-
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Features>
 
   <!-- Cost Calculator -->
   <section class="py-16 bg-white dark:bg-[#09090b]">
