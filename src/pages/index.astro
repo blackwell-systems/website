@@ -6,7 +6,6 @@ import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Steps from '~/components/widgets/Steps.astro';
 
 const metadata = {
   title: 'Blackwell Systems — AI Infrastructure & Consulting',
@@ -198,30 +197,30 @@ const metadata = {
   </section>
 
   <!-- How it works -->
-  <Steps
-    title="How it works"
+  <Features
+    id="how-it-works"
+    tagline="How it works"
+    title="The path to permanent cost reduction"
+    subtitle="A short call, a focused audit, then implementation, measured before and after on every change, in about two weeks."
+    columns={3}
     items={[
       {
-        title: 'Step 1: <span class="font-medium">Discovery Call (30 min, free)</span>',
+        title: 'Step 1: Discovery call (30 min, free)',
         description:
           'Eight questions that reveal which of the 7 layers are costing you the most. We identify your batch-eligible workload, cache hit rate, routing opportunities, and structured data percentage.',
         icon: 'tabler:phone',
       },
       {
-        title: 'Step 2: <span class="font-medium">Token Audit (1-2 days)</span>',
+        title: 'Step 2: Token audit (1-2 days)',
         description:
           'Instrument one representative session. Measure total tokens per call, breakdown by category (system prompt vs history vs tool results vs output), cache hit rate, and structured data ratio. Deliver a report with projected savings per layer.',
         icon: 'tabler:chart-bar',
       },
       {
-        title: 'Step 3: <span class="font-medium">Implement (1-2 weeks)</span>',
+        title: 'Step 3: Implement (1-2 weeks)',
         description:
           'Deploy optimizations in priority order: prompt caching (day 1), format encoding (day 2), model routing (day 3-4), output compression (day 5), agent loop redesign (week 2). Measured before/after on every change.',
         icon: 'tabler:code',
-      },
-      {
-        title: 'Permanent cost reduction',
-        icon: 'tabler:check',
       },
     ]}
   />
