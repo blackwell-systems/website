@@ -11,6 +11,8 @@ const metadata = {
   title: 'Blackwell Systems: independent, evidence-first technical judgment',
   ignoreTitleTemplate: true,
 };
+
+const CAL = 'https://cal.com/blackwell-systems';
 ---
 
 <Layout metadata={metadata}>
@@ -20,7 +22,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Book a call',
-        href: 'https://cal.com/blackwell-systems',
+        href: CAL,
         icon: 'tabler:bolt',
       },
       { variant: 'secondary', text: 'See services', href: '/services' },
@@ -40,7 +42,7 @@ const metadata = {
   <!-- Stats -->
   <Stats
     stats={[
-      { title: 'GCF comprehension evals', amount: '1,700+' },
+      { title: 'GCF comprehension evals', amount: '2,500+' },
       { title: 'GCF implementations', amount: '7' },
       { title: 'Upstream PRs merged', amount: '40+' },
       { title: 'Typical token savings', amount: '70-90%' },
@@ -51,8 +53,8 @@ const metadata = {
   <Features
     id="services"
     tagline="How I work"
-    title="Three services, one method"
-    subtitle="One method underneath all three: evidence-first, verifiable, reproducible. Every recommendation is backed by published work and checked on your own data, not asserted."
+    title="One method, several ways in"
+    subtitle="One method underneath everything: evidence-first, verifiable, reproducible, backed by published work and checked on your own data, not asserted. Most engagements start with an assessment and go deep where it points: fractional CTO, technical due diligence, or AI cost optimization."
     columns={3}
     items={[
       {
@@ -74,69 +76,32 @@ const metadata = {
         description:
           'Cut your LLM bill without losing quality. A full-stack audit across techniques that compound to 70-90% savings, every number measured on your data.',
         icon: 'tabler:coin',
-        callToAction: { text: 'The full stack', href: '/services#token-optimization' },
+        callToAction: { text: 'The full stack', href: '#token-optimization' },
       },
     ]}
   />
 
-  <!-- Projects -->
-  <Features
-    id="projects"
-    tagline="Projects"
-    title="Open source infrastructure for the agentic AI stack"
-    subtitle="Wire formats, code intelligence, MCP tooling, conformance testing. Everything production-grade, everything backed by data."
-    items={[
-      {
-        title: 'GCF (Graph Compact Format)',
-        description:
-          'The AI-native wire format for structured data. 100% LLM comprehension on every frontier model, 90.7% on adversarial payloads. 53-71% fewer tokens than JSON. 1,700+ evaluations, 10+ models, 3 providers. Seven implementations, zero runtime dependencies, MCP proxy, 43 billion+ lossless round-trips across 5 formats.',
-        icon: 'tabler:file-code',
-        callToAction: { text: 'gcformat.com', href: 'https://gcformat.com', target: '_blank' },
-      },
-      {
-        title: 'agent-lsp',
-        description:
-          'Code intelligence infrastructure for AI agents. 65 tools, 30 CI-verified languages, 24 agent workflows. Single Go binary. Uses GCF as default output format.',
-        icon: 'tabler:code',
-        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/agent-lsp', target: '_blank' },
-      },
-      {
-        title: 'mcp-assert',
-        description:
-          'Conformance testing for MCP servers. 102 servers scanned, 34 bugs found, 12 upstream issues filed. ~28K downloads. Fuzz testing, schema linting.',
-        icon: 'tabler:test-pipe',
-        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/mcp-assert', target: '_blank' },
-      },
-      {
-        title: 'knowing',
-        description:
-          'Self-adapting code intelligence engine. 28 MCP tools, graph-native analysis, session deduplication, content-addressed identity layer. The system GCF was extracted from.',
-        icon: 'tabler:brain',
-        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/knowing', target: '_blank' },
-      },
-      {
-        title: 'GCF Proxy',
-        description:
-          'Wrap any MCP server with one command. JSON tool responses re-encoded as GCF before reaching the model. Zero code changes. Session stats track savings in real time.',
-        icon: 'tabler:refresh',
-        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/gcf-proxy', target: '_blank' },
-      },
-      {
-        title: 'GCP Emulator Suite',
-        description:
-          'Local implementations of Google Cloud APIs. Secret Manager has 50K+ downloads, ranked #1 on Google/Bing/DuckDuckGo. KMS, IAM, Eventarc also available.',
-        icon: 'tabler:cloud',
-        callToAction: { text: 'Secret Manager', href: 'https://github.com/blackwell-systems/gcp-secret-manager-emulator', target: '_blank' },
-      },
+  <!-- Business-owner entry door -->
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'AI Opportunity Assessment', href: '/ai-opportunity-assessment', icon: 'tabler:compass' },
     ]}
-  />
+  >
+    <Fragment slot="title">Run a business and just need a straight answer on AI?</Fragment>
 
-  <!-- Consulting: Token Optimization Stack -->
+    <Fragment slot="subtitle">
+      If you are not technical and do not need a CTO, start with the AI Opportunity Assessment: a fixed-scope,
+      vendor-neutral read on where AI actually fits your business and where it does not. It is the front door, and it
+      feeds the three services above when the work is worth it. Plain language, nothing to sell you.
+    </Fragment>
+  </CallToAction>
+
+  <!-- A service in depth: AI cost optimization -->
   <Features
     id="token-optimization"
-    tagline="AI cost optimization"
+    tagline="A service in depth: AI cost optimization"
     title="The Token Optimization Stack"
-    subtitle="One of the three services, in depth. Seven layers of compounding cost reduction, each measured on your own pipeline. They stack multiplicatively: a $2.28 agent session becomes $0.36 after routing, caching, format encoding, and effort control."
+    subtitle="One of the services, in depth. Seven layers of compounding cost reduction, each measured on your own pipeline. They stack multiplicatively: a $2.28 agent session becomes $0.36 after routing, caching, format encoding, and effort control."
     columns={3}
     items={[
       {
@@ -188,7 +153,7 @@ const metadata = {
         <iframe src="https://gcformat.com/calculator-embed.html" style="width:100%; height:900px; border:none; background: transparent;" loading="lazy"></iframe>
       </div>
       <div class="mt-8">
-        <a href="https://cal.com/blackwell-systems" class="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-400 shadow-xl shadow-primary-500/20 px-8 py-4 text-lg">
+        <a href={CAL} class="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-400 shadow-xl shadow-primary-500/20 px-8 py-4 text-lg">
           Book a Free Audit →
         </a>
         <p class="text-sm text-slate-500 mt-3">30 minutes. We'll show you your actual savings on your real data.</p>
@@ -196,10 +161,10 @@ const metadata = {
     </div>
   </section>
 
-  <!-- How it works -->
+  <!-- How it works (cost optimization) -->
   <Features
     id="how-it-works"
-    tagline="How it works"
+    tagline="AI cost optimization: how it works"
     title="The path to permanent cost reduction"
     subtitle="A short call, a focused audit, then implementation, measured before and after on every change, in about two weeks."
     columns={3}
@@ -221,6 +186,58 @@ const metadata = {
         description:
           'Deploy optimizations in priority order: prompt caching (day 1), format encoding (day 2), model routing (day 3-4), output compression (day 5), agent loop redesign (week 2). Measured before/after on every change.',
         icon: 'tabler:code',
+      },
+    ]}
+  />
+
+  <!-- Evidence: the proof behind the judgment -->
+  <Features
+    id="projects"
+    tagline="The evidence behind the judgment"
+    title="Open source infrastructure for the agentic AI stack"
+    subtitle="The recommendations are backed by shipped, measured work: wire formats, code intelligence, MCP tooling, conformance testing. Everything production-grade, everything backed by data."
+    items={[
+      {
+        title: 'GCF (Graph Compact Format)',
+        description:
+          'The AI-native wire format for structured data. 100% LLM comprehension on every frontier model, 90.7% on adversarial payloads. 53-71% fewer tokens than JSON. 2,500+ evaluations, 10+ models, 3 providers. Seven implementations, zero runtime dependencies, MCP proxy, 43 billion+ lossless round-trips across 5 formats.',
+        icon: 'tabler:file-code',
+        callToAction: { text: 'gcformat.com', href: 'https://gcformat.com', target: '_blank' },
+      },
+      {
+        title: 'agent-lsp',
+        description:
+          'Code intelligence infrastructure for AI agents. 65 tools, 30 CI-verified languages, 24 agent workflows. Single Go binary. Uses GCF as default output format.',
+        icon: 'tabler:code',
+        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/agent-lsp', target: '_blank' },
+      },
+      {
+        title: 'mcp-assert',
+        description:
+          'Conformance testing for MCP servers. 102 servers scanned, 34 bugs found, 12 upstream issues filed. ~28K downloads. Fuzz testing, schema linting.',
+        icon: 'tabler:test-pipe',
+        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/mcp-assert', target: '_blank' },
+      },
+      {
+        title: 'knowing',
+        description:
+          'Self-adapting code intelligence engine. 28 MCP tools, graph-native analysis, session deduplication, content-addressed identity layer. The system GCF was extracted from.',
+        icon: 'tabler:brain',
+        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/knowing', target: '_blank' },
+      },
+      {
+        title: 'GCF Proxy',
+        description:
+          'Wrap any MCP server with one command. JSON tool responses re-encoded as GCF before reaching the model. Zero code changes. Session stats track savings in real time.',
+        icon: 'tabler:refresh',
+        callToAction: { text: 'Repository', href: 'https://github.com/blackwell-systems/gcf-proxy', target: '_blank' },
+      },
+      {
+        title: 'GCP Emulator Suite',
+        description:
+          'Local implementations of Google Cloud APIs. Secret Manager has 50K+ downloads, ranked #1 on Google/Bing/DuckDuckGo. KMS, IAM, Eventarc also available.',
+        icon: 'tabler:cloud',
+        callToAction: { text: 'Secret Manager', href: 'https://github.com/blackwell-systems/gcp-secret-manager-emulator', target: '_blank' },
       },
     ]}
   />
@@ -290,7 +307,7 @@ const metadata = {
       {
         variant: 'primary',
         text: 'Book a call',
-        href: 'https://cal.com/blackwell-systems',
+        href: CAL,
         icon: 'tabler:calendar',
       },
       {
@@ -303,9 +320,9 @@ const metadata = {
     <Fragment slot="title">Need an outside technical read?</Fragment>
 
     <Fragment slot="subtitle">
-      Whether the question is a full-time-CTO-level call, a vendor or claim to verify, or an LLM bill that
-      is too high, the work is the same: independent judgment, backed by published evidence and checked on
-      your own data. Book a call and tell me the question.
+      Whether you want a plain-language read on where AI fits your business, a full-time-CTO-level call, a vendor or
+      claim to verify, or an LLM bill that is too high, the work is the same: independent judgment, backed by
+      published evidence and checked on your own data. Book a call and tell me the question.
     </Fragment>
   </CallToAction>
 </Layout>
