@@ -39,18 +39,8 @@ const CAL = 'https://cal.com/blackwell-systems';
     </Fragment>
   </Hero>
 
-  <!-- Stats: buyer-legible traction and value at a glance -->
-  <Stats
-    stats={[
-      { title: 'Typical token savings', amount: '70-90%' },
-      { title: 'Monthly ecosystem downloads', amount: '150K+' },
-      { title: 'Upstream PRs merged', amount: '40+' },
-      { title: 'Open source projects', amount: '20+' },
-    ]}
-  />
-
-  <!-- Social proof: GCF adoption across the ecosystem -->
-  <section class="pt-4 pb-12">
+  <!-- Social proof: GCF adoption across the ecosystem (credibility, right under the hero) -->
+  <section class="pt-4 pb-10">
     <div class="mx-auto max-w-5xl px-4 sm:px-6 text-center">
       <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
         Teams building on GCF, my open wire format
@@ -77,7 +67,17 @@ const CAL = 'https://cal.com/blackwell-systems';
     </div>
   </section>
 
-  <!-- The three services -->
+  <!-- Stats: buyer-legible traction and value at a glance -->
+  <Stats
+    stats={[
+      { title: 'Typical token savings', amount: '70-90%' },
+      { title: 'Monthly ecosystem downloads', amount: '150K+' },
+      { title: 'Upstream PRs merged', amount: '40+' },
+      { title: 'Open source projects', amount: '20+' },
+    ]}
+  />
+
+  <!-- The offer: services + the entry door -->
   <Features
     id="services"
     tagline="How I work"
@@ -123,100 +123,6 @@ const CAL = 'https://cal.com/blackwell-systems';
       feeds the three services above when the work is worth it. Plain language, nothing to sell you.
     </Fragment>
   </CallToAction>
-
-  <!-- A service in depth: AI cost optimization -->
-  <Features
-    id="token-optimization"
-    tagline="A service in depth: AI cost optimization"
-    title="The Token Optimization Stack"
-    subtitle="One of the services, in depth. Seven layers of compounding cost reduction, each measured on your own pipeline. They stack multiplicatively: a $2.28 agent session becomes $0.36 after routing, caching, format encoding, and effort control."
-    columns={3}
-    items={[
-      {
-        title: 'Layer 1: Model Routing',
-        description: 'Route simple tasks to cheap models (80% savings). RouteLLM, LiteLLM, or custom classifiers. Most teams use one model for everything.',
-        icon: 'tabler:arrows-sort',
-      },
-      {
-        title: 'Layer 2: Transport',
-        description: 'Prompt caching (90% off repeated prefix), batch API (50% off async work), request coalescing. Zero code changes on Anthropic and OpenAI.',
-        icon: 'tabler:arrows-exchange',
-      },
-      {
-        title: 'Layer 3: Session',
-        description: 'GCF session deduplication: 92% savings by the 5th call. Delta encoding: 81% on re-queries. No other format can do this.',
-        icon: 'tabler:refresh',
-      },
-      {
-        title: 'Layer 4: Format',
-        description: 'GCF wire format: 53-71% fewer tokens on structured data. 100% LLM comprehension. Drop-in proxy or native encoding in 7 languages.',
-        icon: 'tabler:file-code',
-      },
-      {
-        title: 'Layer 5: Context',
-        description: 'RAG reranking, CLI output filtering (RTK: 60-90% savings), selective tool loading. Send less irrelevant data into the context window.',
-        icon: 'tabler:search',
-      },
-      {
-        title: 'Layer 6: Output',
-        description: 'Effort parameter (thinking token control), structured outputs, Caveman-style compression. Output tokens cost 3-6x more than input.',
-        icon: 'tabler:arrows-minimize',
-      },
-      {
-        title: 'Layer 7: Architecture',
-        description: 'Agent loop redesign, task budgets, parallel tool execution, progressive disclosure. The loop is where all optimizations compound most aggressively.',
-        icon: 'tabler:topology-star',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features>
-
-  <!-- Cost Calculator -->
-  <section class="py-16 bg-white dark:bg-[#09090b]">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
-      <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
-        <iframe src="https://gcformat.com/calculator-embed.html" style="width:100%; height:900px; border:none; background: transparent;" loading="lazy"></iframe>
-      </div>
-      <div class="mt-8">
-        <a href={CAL} class="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-400 shadow-xl shadow-primary-500/20 px-8 py-4 text-lg">
-          Book a Free Audit →
-        </a>
-        <p class="text-sm text-slate-500 mt-3">30 minutes. We'll show you your actual savings on your real data.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- How it works (cost optimization) -->
-  <Features
-    id="how-it-works"
-    tagline="AI cost optimization: how it works"
-    title="The path to permanent cost reduction"
-    subtitle="A short call, a focused audit, then implementation, measured before and after on every change, in about two weeks."
-    columns={3}
-    items={[
-      {
-        title: 'Step 1: Discovery call (30 min, free)',
-        description:
-          'Eight questions that reveal which of the 7 layers are costing you the most. We identify your batch-eligible workload, cache hit rate, routing opportunities, and structured data percentage.',
-        icon: 'tabler:phone',
-      },
-      {
-        title: 'Step 2: Token audit (1-2 days)',
-        description:
-          'Instrument one representative session. Measure total tokens per call, breakdown by category (system prompt vs history vs tool results vs output), cache hit rate, and structured data ratio. Deliver a report with projected savings per layer.',
-        icon: 'tabler:chart-bar',
-      },
-      {
-        title: 'Step 3: Implement (1-2 weeks)',
-        description:
-          'Deploy optimizations in priority order: prompt caching (day 1), format encoding (day 2), model routing (day 3-4), output compression (day 5), agent loop redesign (week 2). Measured before/after on every change.',
-        icon: 'tabler:code',
-      },
-    ]}
-  />
 
   <!-- Evidence: the proof behind the judgment -->
   <Features
@@ -319,7 +225,7 @@ const CAL = 'https://cal.com/blackwell-systems';
     </Fragment>
   </Features>
 
-  <!-- GCF technical proof (in the evidence block, where it has context) -->
+  <!-- GCF technical proof (closes the evidence block) -->
   <Stats
     stats={[
       { title: 'GCF comprehension (frontier models)', amount: '100%' },
@@ -328,6 +234,100 @@ const CAL = 'https://cal.com/blackwell-systems';
       { title: 'Lossless round-trips', amount: '43B+' },
     ]}
   />
+
+  <!-- One service in depth: AI cost optimization -->
+  <Features
+    id="token-optimization"
+    tagline="A service in depth: AI cost optimization"
+    title="The Token Optimization Stack"
+    subtitle="Take one of the services in depth. Seven layers of compounding cost reduction, each measured on your own pipeline. They stack multiplicatively: a $2.28 agent session becomes $0.36 after routing, caching, format encoding, and effort control."
+    columns={3}
+    items={[
+      {
+        title: 'Layer 1: Model Routing',
+        description: 'Route simple tasks to cheap models (80% savings). RouteLLM, LiteLLM, or custom classifiers. Most teams use one model for everything.',
+        icon: 'tabler:arrows-sort',
+      },
+      {
+        title: 'Layer 2: Transport',
+        description: 'Prompt caching (90% off repeated prefix), batch API (50% off async work), request coalescing. Zero code changes on Anthropic and OpenAI.',
+        icon: 'tabler:arrows-exchange',
+      },
+      {
+        title: 'Layer 3: Session',
+        description: 'GCF session deduplication: 92% savings by the 5th call. Delta encoding: 81% on re-queries. No other format can do this.',
+        icon: 'tabler:refresh',
+      },
+      {
+        title: 'Layer 4: Format',
+        description: 'GCF wire format: 53-71% fewer tokens on structured data. 100% LLM comprehension. Drop-in proxy or native encoding in 7 languages.',
+        icon: 'tabler:file-code',
+      },
+      {
+        title: 'Layer 5: Context',
+        description: 'RAG reranking, CLI output filtering (RTK: 60-90% savings), selective tool loading. Send less irrelevant data into the context window.',
+        icon: 'tabler:search',
+      },
+      {
+        title: 'Layer 6: Output',
+        description: 'Effort parameter (thinking token control), structured outputs, Caveman-style compression. Output tokens cost 3-6x more than input.',
+        icon: 'tabler:arrows-minimize',
+      },
+      {
+        title: 'Layer 7: Architecture',
+        description: 'Agent loop redesign, task budgets, parallel tool execution, progressive disclosure. The loop is where all optimizations compound most aggressively.',
+        icon: 'tabler:topology-star',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- How the cost-optimization engagement runs -->
+  <Features
+    id="how-it-works"
+    tagline="AI cost optimization: how it works"
+    title="The path to permanent cost reduction"
+    subtitle="A short call, a focused audit, then implementation, measured before and after on every change, in about two weeks."
+    columns={3}
+    items={[
+      {
+        title: 'Step 1: Discovery call (30 min, free)',
+        description:
+          'Eight questions that reveal which of the 7 layers are costing you the most. We identify your batch-eligible workload, cache hit rate, routing opportunities, and structured data percentage.',
+        icon: 'tabler:phone',
+      },
+      {
+        title: 'Step 2: Token audit (1-2 days)',
+        description:
+          'Instrument one representative session. Measure total tokens per call, breakdown by category (system prompt vs history vs tool results vs output), cache hit rate, and structured data ratio. Deliver a report with projected savings per layer.',
+        icon: 'tabler:chart-bar',
+      },
+      {
+        title: 'Step 3: Implement (1-2 weeks)',
+        description:
+          'Deploy optimizations in priority order: prompt caching (day 1), format encoding (day 2), model routing (day 3-4), output compression (day 5), agent loop redesign (week 2). Measured before/after on every change.',
+        icon: 'tabler:code',
+      },
+    ]}
+  />
+
+  <!-- Cost Calculator: the free number, right before the ask -->
+  <section class="py-16 bg-white dark:bg-[#09090b]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl text-center">
+      <div class="rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800">
+        <iframe src="https://gcformat.com/calculator-embed.html" style="width:100%; height:900px; border:none; background: transparent;" loading="lazy"></iframe>
+      </div>
+      <div class="mt-8">
+        <a href={CAL} class="inline-flex items-center justify-center font-medium rounded-xl transition-all duration-200 bg-primary-600 dark:bg-primary-500 text-white hover:bg-primary-700 dark:hover:bg-primary-400 shadow-xl shadow-primary-500/20 px-8 py-4 text-lg">
+          Book a Free Audit →
+        </a>
+        <p class="text-sm text-slate-500 mt-3">30 minutes. We'll show you your actual savings on your real data.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- CTA -->
   <CallToAction
