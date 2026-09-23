@@ -39,33 +39,111 @@ const CAL = 'https://cal.com/blackwell-systems';
     </Fragment>
   </Hero>
 
-  <!-- Social proof: GCF adoption across the ecosystem (credibility, right under the hero) -->
+  <!-- Social proof: GCF adoption across the ecosystem (styled after the gcf site's SocialProof) -->
   <section class="pt-4 pb-10">
-    <div class="mx-auto max-w-5xl px-4 sm:px-6 text-center">
-      <p class="text-xs font-semibold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
-        Teams building on GCF, my open wire format
-      </p>
-      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-sm">
-        <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">Chrome DevTools MCP <span class="text-xs text-primary-500/70">48.8K ★</span></a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">OmniRoute <span class="text-xs text-primary-500/70">43.9K ★</span></a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://speakeasy.com" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">Speakeasy</a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://github.com/automateyournetwork/netclaw" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">NetClaw <span class="text-xs text-primary-500/70">627 ★</span></a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://github.com/stevesolun/ctx" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">ctx <span class="text-xs text-primary-500/70">569 ★</span></a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://github.com/gensecaihq/Wazuh-MCP-Server" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">Wazuh MCP <span class="text-xs text-primary-500/70">216 ★</span></a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://opendataproducts.org/sdk/" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">Open Data Products SDK <span class="text-xs text-slate-400 dark:text-slate-600">(Linux Foundation)</span></a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://neuronest.cc/" target="_blank" rel="noopener" class="font-semibold text-slate-500 hover:text-primary-600 dark:text-slate-400 dark:hover:text-primary-400 transition-colors">NeuroNest</a>
-        <span class="text-slate-300 dark:text-slate-700">·</span>
-        <a href="https://gcformat.com/ecosystem/adopters.html" target="_blank" rel="noopener" class="italic text-primary-500/80 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">and more</a>
-      </div>
+    <div class="proof-wrap">
+      <span class="proof-label">Teams building on GCF, my open wire format</span>
+      <span class="proof-items">
+        <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener" class="proof-item">Chrome DevTools MCP <span class="proof-stars">48.8K ★</span></a>
+        <span class="proof-sep">·</span>
+        <a href="https://github.com/diegosouzapw/OmniRoute" target="_blank" rel="noopener" class="proof-item">♦️ OmniRoute <span class="proof-stars">43.9K ★</span></a>
+        <span class="proof-sep">·</span>
+        <a href="https://github.com/automateyournetwork/netclaw" target="_blank" rel="noopener" class="proof-item">🦞 NetClaw <span class="proof-stars">627 ★</span></a>
+        <span class="proof-sep">·</span>
+        <a href="https://github.com/stevesolun/ctx" target="_blank" rel="noopener" class="proof-item">ctx <span class="proof-stars">569 ★</span></a>
+        <span class="proof-sep">·</span>
+        <a href="https://github.com/gensecaihq/Wazuh-MCP-Server" target="_blank" rel="noopener" class="proof-item">🛡️ Wazuh MCP <span class="proof-stars">216 ★</span></a>
+        <span class="proof-sep">·</span>
+        <a href="https://speakeasy.com" target="_blank" rel="noopener" class="proof-item"><img src="/logos/speakeasy-logo.svg" alt="Speakeasy" class="proof-logo invert dark:invert-0" /></a>
+        <span class="proof-sep">·</span>
+        <a href="https://opendataproducts.org/sdk/" target="_blank" rel="noopener" class="proof-item"><img src="/logos/odps-logo.png" alt="ODPS" class="proof-logo" /> SDK <span class="proof-stars">(Linux Foundation)</span></a>
+        <span class="proof-sep">·</span>
+        <a href="https://neuronest.cc/" target="_blank" rel="noopener" class="proof-item"><span class="nn-logo">🧠</span> NeuroNest</a>
+        <span class="proof-sep">·</span>
+        <a href="https://gcformat.com/ecosystem/adopters.html" target="_blank" rel="noopener" class="proof-item proof-more">and more</a>
+      </span>
     </div>
   </section>
+
+  <style>
+    .proof-wrap {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .proof-label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: rgb(148 163 184 / 0.9);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+    .proof-items {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .proof-item {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: rgb(100 116 139);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+    :global(.dark) .proof-item { color: rgb(148 163 184); }
+    .proof-item:hover { color: var(--aw-color-primary, #2563eb); }
+    .proof-stars {
+      font-size: 0.68rem;
+      color: var(--aw-color-primary, #2563eb);
+      opacity: 0.75;
+      font-weight: 700;
+    }
+    .proof-sep { color: rgb(203 213 225); font-size: 0.7rem; }
+    :global(.dark) .proof-sep { color: rgb(51 65 85); }
+    .proof-more { font-style: italic; opacity: 0.8; }
+    .proof-logo {
+      height: 14px;
+      width: auto;
+      display: inline;
+      vertical-align: text-top;
+      opacity: 0.6;
+      transition: opacity 0.2s ease;
+    }
+    .proof-item:hover .proof-logo { opacity: 1; }
+    @keyframes nn-spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .nn-logo {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      font-size: 10px;
+      border-radius: 50%;
+      position: relative;
+      vertical-align: middle;
+    }
+    .nn-logo::before {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: conic-gradient(#a855f7, #4ade80, #a855f7);
+      animation: nn-spin 6s linear infinite;
+      z-index: -1;
+      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+      mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+    }
+  </style>
 
   <!-- Stats: buyer-legible traction and value at a glance -->
   <Stats
