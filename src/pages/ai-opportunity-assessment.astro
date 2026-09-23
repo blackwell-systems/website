@@ -1,0 +1,161 @@
+---
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features from '~/components/widgets/Features.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'AI Opportunity Assessment — Blackwell Systems',
+  description:
+    'An independent read on where AI actually fits your business and where it does not. Fixed scope, plain language, and nothing to sell you. Specific to your workflows and your constraints.',
+};
+
+const CAL = 'https://cal.com/blackwell-systems';
+---
+
+<Layout metadata={metadata}>
+  <Hero
+    tagline="AI Opportunity Assessment"
+    actions={[
+      { variant: 'primary', text: 'Book a call', href: CAL, icon: 'tabler:bolt' },
+      { variant: 'secondary', text: 'Get in touch', href: '/contact' },
+    ]}
+  >
+    <Fragment slot="title">
+      Where does AI <span class="text-accent dark:text-white">actually fit</span> your business?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      You are pitched "AI" from every direction and told it will change everything. This is the outside read that
+      tells you what is real, what is a distraction, and what would actually help, specific to how your business runs
+      and the limits it runs under. Fixed scope, plain language, and nothing to sell you.
+    </Fragment>
+  </Hero>
+
+  <!-- What you get -->
+  <Features
+    id="deliverable"
+    tagline="The deliverable"
+    title="A clear plan you can act on"
+    subtitle="You get a written plan in plain language, not a sales pitch and not a jargon deck. Every recommendation is specific to how your business actually works."
+    columns={2}
+    items={[
+      {
+        title: 'Where AI helps, ranked',
+        description:
+          'A prioritized list of the places AI would actually move the needle in your business, each with what it would do, the effort to adopt it, and a rough payback.',
+        icon: 'tabler:list-numbers',
+      },
+      {
+        title: 'What to skip, and why',
+        description:
+          'The pitches to turn down, the tools that are thin wrappers, and the promises that will not hold at your size. The part a vendor will never tell you.',
+        icon: 'tabler:ban',
+      },
+      {
+        title: 'Fit to your constraints',
+        description:
+          'How each option lands against the limits that actually bind: budget, staff and skills, your data, regulation, and the systems you already run.',
+        icon: 'tabler:adjustments',
+      },
+      {
+        title: 'A first step',
+        description:
+          'The one or two lowest-risk, highest-signal things to try now, and a simple way to tell whether they worked before you spend more.',
+        icon: 'tabler:flag',
+      },
+    ]}
+  />
+
+  <!-- How it works -->
+  <Steps
+    title="How it works"
+    tagline="Fixed scope, mostly on your schedule"
+    items={[
+      {
+        title: 'A short intake',
+        description:
+          'A questionnaire and a quick call so I learn your business, your workflows, and what constrains you. Most of it is done in writing, on your time.',
+        icon: 'tabler:clipboard-text',
+      },
+      {
+        title: 'A working session',
+        description:
+          'A half-day walking through how you operate and testing the real opportunities with the people who actually do the work.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Your written plan',
+        description:
+          'Delivered after the session. The plan is the product, not the meeting, and it is yours to keep and act on however you like.',
+        icon: 'tabler:file-text',
+      },
+    ]}
+  />
+
+  <!-- Why this, not a vendor -->
+  <Features
+    id="why"
+    tagline="Why this is different"
+    title="Independent, with nothing to sell you"
+    subtitle="Most AI advice comes from someone who profits from the answer. This does not."
+    columns={3}
+    items={[
+      {
+        title: 'No tool, no commission',
+        description:
+          'I do not sell software and I take no referral fees. The recommendation is not steered toward anything I profit from. That neutrality is the whole point of paying for it.',
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Specific, not generic',
+        description:
+          'No off-the-shelf "AI strategy" deck. Every line is about your business, your workflows, and your real constraints, and it says what not to do as clearly as what to do.',
+        icon: 'tabler:target',
+      },
+      {
+        title: 'Backed by the real work',
+        description:
+          'The same evidence-first standard behind my technical due-diligence and AI cost work: claims checked, not asserted, and published so you can see it.',
+        icon: 'tabler:certificate',
+        callToAction: { text: 'See the technical work', href: '/services' },
+      },
+    ]}
+  />
+
+  <!-- Who it is for -->
+  <Features
+    id="who"
+    tagline="Who it is for"
+    title="Built for owners and operators, not tech departments"
+    columns={2}
+    items={[
+      {
+        title: 'You run the business',
+        description:
+          'A services firm, a shop, a practice, a manufacturer. You do not have a technical team to sort the real from the sold, and you do not need to hire one to get a straight answer.',
+        icon: 'tabler:building-store',
+      },
+      {
+        title: 'You want a decision, not a project',
+        description:
+          'A fixed-scope read that ends with a short list of what to do and what to avoid. If it points to real work, that is a separate step you choose, not something baked in.',
+        icon: 'tabler:route',
+      },
+    ]}
+  />
+
+  <CallToAction
+    actions={[
+      { variant: 'primary', text: 'Book a call', href: CAL, icon: 'tabler:calendar' },
+      { variant: 'secondary', text: 'Get in touch', href: '/contact' },
+    ]}
+  >
+    <Fragment slot="title">Find out what AI can actually do for your business.</Fragment>
+
+    <Fragment slot="subtitle">
+      A short call to see if it fits, or send the details. Independent, plain-spoken, and specific to you.
+    </Fragment>
+  </CallToAction>
+</Layout>
