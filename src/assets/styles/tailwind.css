@@ -198,3 +198,11 @@ body::after {
   animation: none !important;
   transform: none !important;
 }
+
+/* ===================== Premium typography pass ===================== */
+/* Fraunces optical sizing: browser picks opsz by rendered size */
+h1, h2, h3, h4, .font-heading { font-optical-sizing: auto; }
+/* Comfortable body leading in content areas */
+.text-muted, .text-default p { line-height: 1.65; }
+/* Stats numerals: mono + tabular figures (also set on the element) */
+.tabular-nums { font-variant-numeric: tabular-nums; }
