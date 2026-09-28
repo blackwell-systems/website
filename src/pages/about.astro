@@ -4,7 +4,6 @@ import { facts } from "~/data/facts";
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features from '~/components/widgets/Features.astro';
-import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -18,7 +17,6 @@ const CAL = 'https://cal.com/blackwell-systems';
 
 <Layout metadata={metadata}>
   <Hero
-    tagline="About"
     actions={[
       { variant: 'primary', text: 'See services', href: '/services', icon: 'tabler:bolt' },
       { variant: 'secondary', text: 'Get in touch', href: '/contact' },
@@ -45,94 +43,161 @@ const CAL = 'https://cal.com/blackwell-systems';
   />
 
   <!-- Principle -->
-  <Content
+  <Features
     id="how-i-work"
     tagline="How I work"
     title="Evidence over assertion"
+    subtitle="Most technical claims are hard to check. My work is the opposite: everything I put forward is something I can show you. That is the through-line from the code to the advisory work."
+    columns={3}
     items={[
       {
         title: 'Built in the open',
         description: 'The infrastructure is public, the benchmarks ship with their methodology and logs, and the numbers reproduce.',
+        icon: 'tabler:eye-check',
       },
       {
         title: 'Verified on your data',
         description: 'When I advise, the recommendation is held to the same bar: measured on your own systems, not asserted from a template.',
+        icon: 'tabler:chart-dots',
       },
       {
         title: 'Clear about the edges',
         description: 'I state what a finding rests on and what would change it. Neutral by default, and direct about what is worth building.',
+        icon: 'tabler:border-all',
       },
     ]}
-  >
-    <Fragment slot="content">
-      <p>
-        Most technical claims are hard to check. My work is the opposite: everything I put forward is something
-        I can show you. That is the through-line from the code to the advisory work.
-      </p>
-    </Fragment>
+  />
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-primary/10 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- What I build -->
+  <!-- Selected work -->
   <Features
-    id="what-i-build"
-    tagline="What I build"
-    title="Infrastructure for the agentic AI stack"
-    subtitle="Production-grade, open source, and backed by data. This is the evidence behind the judgment."
-    columns={3}
+    id="selected-work"
+    tagline="Selected work"
+    title="The open infrastructure the AI stack is building on"
+    subtitle="Production-grade, open source, and backed by measured, reproducible numbers. This is the evidence behind the judgment."
+    columns={2}
     items={[
       {
-        title: 'Wire formats and infrastructure',
+        title: 'GCF',
         description:
-          'GCF, the AI-native wire format for structured data: seven implementations, published comprehension benchmarks, 53-71% fewer tokens than JSON. Plus agent-lsp, a zero-code GCF proxy, and a suite of Google Cloud emulators.',
+          'An AI-native wire format reverse-engineered from tokenizer data. 100% comprehension on every frontier model, 91.2% on complex code graphs where JSON drops to 54.1%, 50-92% fewer tokens, 43B+ lossless round-trips. Seven implementations. Adopted by Chrome DevTools MCP, OmniRoute, Speakeasy, and the Linux Foundation ODPS.',
         icon: 'tabler:file-code',
       },
       {
-        title: 'Open source and upstream',
+        title: 'knowing',
         description:
-          'More than 40 merged pull requests across the open-source ecosystem, from the MCP SDKs to Google, Grafana, and HashiCorp, including data-corruption and panic-recovery fixes. #6 all-time contributor to mcp-go.',
-        icon: 'tabler:git-merge',
+          'A content-addressed code intelligence engine that beats every competitor in the category with statistical proof: 3.2x codegraph, 5x GitNexus, 18.5x grep across 308 tasks and 16 repos. Supply-chain detection without executing code, at a 1.0% false-positive rate.',
+        icon: 'tabler:hierarchy-2',
       },
       {
-        title: 'Research and writing',
+        title: 'agent-lsp',
         description:
-          'Nine research papers on the theory behind the tooling, and a technical blog that documents the work in depth at blog.blackwell-systems.com.',
-        icon: 'tabler:notebook',
+          'A stateful MCP runtime over real language servers: 65 tools, 30 CI-verified languages, and a speculative execution engine that simulates edits in memory before committing. On the official MCP Registry and Glama (A-tier).',
+        icon: 'tabler:server-2',
+      },
+      {
+        title: 'mcp-assert',
+        description:
+          'The deterministic testing standard for MCP servers. 28,000+ downloads, 102 servers scanned, 34 upstream bugs found. Adopted as the CI standard by Ant Group and across 25+ repos at wyre-technology.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'polywave',
+        description:
+          'A formally specified parallel-agent coordination protocol: 6 invariants, 48 execution rules, 7 roles, and a 4-5x measured speedup. knowing (94K lines) was built on it.',
+        icon: 'tabler:affiliate',
+      },
+      {
+        title: 'GCP emulator platform',
+        description:
+          'Local Google Cloud APIs for development and CI. The Secret Manager emulator is the most widely adopted community solution, ranked #1 on Google, Bing, and DuckDuckGo, with 50K+ downloads and enterprise CI adoption.',
+        icon: 'tabler:cloud',
+      },
+    ]}
+  />
+
+  <!-- Research -->
+  <Features
+    id="research"
+    tagline="Research"
+    title="The theory under the tooling"
+    subtitle="Nine self-published research papers (Zenodo DOIs), several with industry response. They work out the theory the tooling is built on, from tokenizer design and transformer attention to distributed convergence and memory reclamation. The proof of value is the inbound they generated, not review status. Full set with abstracts on blog.blackwell-systems.com/about."
+    columns={3}
+    items={[
+      {
+        title: 'Tokenizer-attention coupling',
+        description:
+          'How BPE merge decisions permanently shape transformer internal organization. 43 tokenizers, controlled experiments, 3-738x better structured-data comprehension at zero natural-language cost. doi:10.5281/zenodo.20925910',
+        icon: 'tabler:binary',
+      },
+      {
+        title: 'Stranded attention',
+        description:
+          'A previously undescribed failure mode: structural capacity the tokenizer permanently prevents every attention head from using. doi:10.5281/zenodo.21158886',
+        icon: 'tabler:brain',
+      },
+      {
+        title: 'Content-addressing as a primitive',
+        description:
+          'Hierarchical Merkle trees over code-relationship edges as a query-optimization substrate. The theory behind knowing. doi:10.5281/zenodo.20342255',
+        icon: 'tabler:fingerprint',
+      },
+    ]}
+  />
+
+  <!-- Background -->
+  <Features
+    id="background"
+    tagline="Background"
+    title="Production scar tissue, not just theory"
+    subtitle="The open-source work shows the range; the operating experience is why the judgment holds up under real constraints."
+    columns={3}
+    items={[
+      {
+        title: 'Revenue-critical systems at scale',
+        description:
+          'Backend for a global loyalty platform serving millions of members across 120 countries, the foundational layer nearly every engineering team consumed. 24/7 on-call.',
+        icon: 'tabler:building-bank',
+      },
+      {
+        title: 'Systems I designed and ran',
+        description:
+          'A digital wallet across 5 currencies, a serverless promotion rules engine, and a real-time CDC pipeline that replaced full-table scans, processing in about 1.3 minutes regardless of dataset size.',
+        icon: 'tabler:topology-ring',
+      },
+      {
+        title: 'Why it matters to you',
+        description:
+          'The advisory read is practical, not academic. I have owned the outage, the migration, and the cost line, so build-versus-buy and vendor calls come from having lived the consequences.',
+        icon: 'tabler:route',
       },
     ]}
   />
 
   <!-- The practice -->
-  <Content
+  <Features
     id="practice"
     tagline="The practice"
     title="The same judgment, applied to your stack"
-    isReversed
+    subtitle="Three services, one method. The full breakdown, with how each engagement runs, is on the services page."
+    columns={3}
     items={[
       {
         title: 'Fractional CTO',
         description: 'Embedded technical leadership: strategy, build-versus-buy, architecture, and cost.',
+        icon: 'tabler:compass',
       },
       {
         title: 'Technical due diligence',
         description: 'Independent evaluation of a claim or vendor, delivered as a decision memo with economics and risk.',
+        icon: 'tabler:search',
       },
       {
         title: 'AI cost optimization',
         description: 'A full-stack audit that cuts the LLM bill without losing quality, every number measured on your data.',
+        icon: 'tabler:coin',
       },
     ]}
-  >
-    <Fragment slot="content">
-      <p>
-        Three services, one method. The full breakdown, with how each engagement runs, is on the
-        <a class="text-primary-600 dark:text-primary-400 underline" href="/services">services page</a>.
-      </p>
-    </Fragment>
-  </Content>
+  />
 
   <CallToAction
     actions={[
