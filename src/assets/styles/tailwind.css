@@ -141,8 +141,8 @@
   transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   pointer-events: none;
 }
-#header nav > ul > li > a::before { top: calc(50% - 9px); transform-origin: left; }
-#header nav > ul > li > a::after  { top: calc(50% + 7px); transform-origin: right; }
+#header nav > ul > li > a::before { top: calc(50% - 13px); transform-origin: left; }
+#header nav > ul > li > a::after  { top: calc(50% + 13px); transform-origin: right; }
 #header nav > ul > li > a:hover::before,
 #header nav > ul > li > a:hover::after { transform: scaleX(1); }
 
@@ -162,4 +162,31 @@
   letter-spacing: 0.08em;
   font-size: 0.72rem;
   color: var(--aw-color-text-muted);
+}
+
+/* Signature flowing-curves backdrop, matched to the blog */
+body { position: relative; }
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image: url('/background.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  opacity: 0.9;
+  pointer-events: none;
+}
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--aw-color-bg-page) 48%, transparent) 0%,
+    color-mix(in srgb, var(--aw-color-bg-page) 28%, transparent) 45%,
+    color-mix(in srgb, var(--aw-color-bg-page) 40%, transparent) 100%);
 }
