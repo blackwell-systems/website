@@ -45,7 +45,7 @@ const CAL = 'https://cal.com/blackwell-systems';
   <!-- Social proof: GCF adoption across the ecosystem (styled after the gcf site's SocialProof) -->
   <section class="pt-2 pb-5">
     <div class="proof-wrap">
-      <span class="proof-label">Teams building on GCF, my open wire format</span>
+      <span class="proof-label">Building on GCF</span>
       <span class="proof-items">
         <a href="https://github.com/ChromeDevTools/chrome-devtools-mcp" target="_blank" rel="noopener" class="proof-item">Chrome DevTools MCP <span class="proof-stars">48.8K ★</span></a>
         <span class="proof-sep">·</span>
@@ -70,7 +70,7 @@ const CAL = 'https://cal.com/blackwell-systems';
 
   <style>
     .proof-wrap {
-      max-width: 1152px;
+      max-width: 1320px;
       margin: 0 auto;
       padding: 0 24px;
       display: flex;
@@ -81,7 +81,7 @@ const CAL = 'https://cal.com/blackwell-systems';
       line-height: 1.2;
     }
     .proof-label {
-      font-size: 0.7rem;
+      font-size: 11px;
       font-weight: 600;
       color: rgb(148 163 184 / 0.9);
       text-transform: uppercase;
@@ -90,29 +90,31 @@ const CAL = 'https://cal.com/blackwell-systems';
     .proof-items {
       display: flex;
       align-items: center;
-      gap: 4px 7px;
+      gap: 5px 9px;
       flex-wrap: wrap;
       justify-content: center;
     }
+    
     .proof-item {
-      font-size: 0.8rem;
+      font-size: 12px;
       font-weight: 600;
       color: rgb(100 116 139);
       text-decoration: none;
       transition: color 0.2s ease;
       display: inline-flex;
       align-items: center;
+      white-space: nowrap;
       gap: 4px;
     }
     :global(.dark) .proof-item { color: rgb(148 163 184); }
     .proof-item:hover { color: var(--aw-color-primary, #6fa2c9); }
     .proof-stars {
-      font-size: 0.68rem;
+      font-size: 10px;
       color: var(--aw-color-primary, #6fa2c9);
       opacity: 0.75;
       font-weight: 700;
     }
-    .proof-sep { color: rgb(203 213 225); font-size: 0.7rem; }
+    .proof-sep { color: rgb(203 213 225); font-size: 11px; }
     :global(.dark) .proof-sep { color: rgb(51 65 85); }
     .proof-more { font-style: italic; opacity: 0.8; }
     .proof-logo {
