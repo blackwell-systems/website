@@ -1,0 +1,91 @@
+---
+// Named "adopted by" strip. Guard: these are adopters of the OPEN WORK
+// (GCF, mcp-assert, the GCP emulators), not endorsers of the practice.
+// Names only, no testimonials. Sizes pinned to px so 2xl root scaling can't inflate it.
+export interface Props {
+  label?: string;
+}
+const { label = 'Adopted across the ecosystem' } = Astro.props;
+
+const items = [
+  { text: 'Chrome DevTools MCP', href: 'https://github.com/ChromeDevTools/chrome-devtools-mcp', note: '48.8K ★' },
+  { text: 'Ant Group', href: 'https://github.com/antvis/mcp-server-chart', note: 'CI standard' },
+  { text: 'Speakeasy', href: 'https://speakeasy.com' },
+  { text: "Linux Foundation ODPS", href: 'https://opendataproducts.org/sdk/' },
+  { text: 'OmniRoute', href: 'https://github.com/diegosouzapw/OmniRoute' },
+  { text: 'Flipt', href: 'https://github.com/flipt-io/flipt', note: '4.8K ★' },
+  { text: 'wyre-technology', href: 'https://github.com/wyre-technology', note: '25+ repos' },
+];
+---
+
+<section class="adopt-section">
+  <div class="adopt-wrap">
+    <span class="adopt-label">{label}</span>
+    <span class="adopt-items">
+      {
+        items.map((it, i) => (
+          <>
+            {i > 0 && <span class="adopt-sep">·</span>}
+            <a href={it.href} target="_blank" rel="noopener" class="adopt-item">
+              {it.text}
+              {it.note && <span class="adopt-note">{it.note}</span>}
+            </a>
+          </>
+        ))
+      }
+      <span class="adopt-sep">·</span>
+      <a href="https://gcformat.com/ecosystem/adopters.html" target="_blank" rel="noopener" class="adopt-item adopt-more">and more</a>
+    </span>
+  </div>
+</section>
+
+<style>
+  .adopt-section { padding: 8px 0 4px; }
+  .adopt-wrap {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 12px;
+    flex-wrap: wrap;
+    line-height: 1.2;
+  }
+  .adopt-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: rgb(148 163 184 / 0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+  .adopt-items {
+    display: flex;
+    align-items: center;
+    gap: 5px 9px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .adopt-item {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(100 116 139);
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    gap: 4px;
+  }
+  :global(.dark) .adopt-item { color: rgb(148 163 184); }
+  .adopt-item:hover { color: var(--aw-color-primary, #6fa2c9); }
+  .adopt-note {
+    font-size: 10px;
+    color: var(--aw-color-primary, #6fa2c9);
+    opacity: 0.75;
+    font-weight: 700;
+  }
+  .adopt-sep { color: rgb(203 213 225); font-size: 11px; }
+  :global(.dark) .adopt-sep { color: rgb(51 65 85); }
+  .adopt-more { font-style: italic; opacity: 0.8; }
+</style>

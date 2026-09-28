@@ -4,6 +4,7 @@ import { facts } from "~/data/facts";
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features from '~/components/widgets/Features.astro';
+import AdoptedBy from '~/components/widgets/AdoptedBy.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -26,6 +27,8 @@ const CAL = 'https://cal.com/blackwell-systems';
       { title: 'Monthly ecosystem downloads', amount: facts.downloads },
     ]}
   />
+
+  <AdoptedBy />
 
   <!-- Principle -->
   <Features
