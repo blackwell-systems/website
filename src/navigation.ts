@@ -4,6 +4,7 @@ export const headerData = {
   links: [
     { text: 'Work', href: '/#projects' },
     { text: 'Services', href: '/services' },
+    { text: 'Blog', href: 'https://blog.blackwell-systems.com' },
     { text: 'About', href: '/about' },
     { text: 'Contact', href: '/contact' },
   ],
