@@ -125,7 +125,7 @@
   font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-size: 0.75rem;
+  font-size: 13px;   /* absolute px to match the blog nav and resist 2xl root scaling */
   font-weight: 500;
   position: relative;
 }
