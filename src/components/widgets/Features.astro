@@ -34,9 +34,9 @@ const columnsClass =
 
   {
     items.length > 0 && (
-      <div class:list={['grid mx-auto gap-8 md:gap-y-12', columnsClass]}>
+      <div class:list={['feature-grid grid mx-auto', columnsClass]}>
         {items.map(({ title: itemTitle, description, callToAction }) => (
-          <div class="feature-item max-w-md">
+          <div class="feature-item">
             {itemTitle && (
               <h3 class="font-heading text-[1.2rem] md:text-[1.3rem] font-semibold tracking-tight leading-snug">{itemTitle}</h3>
             )}

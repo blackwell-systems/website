@@ -206,3 +206,22 @@ h1, h2, h3, h4, .font-heading { font-optical-sizing: auto; }
 .text-muted, .text-default p { line-height: 1.65; }
 /* Stats numerals: mono + tabular figures (also set on the element) */
 .tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* Editorial bordered grid for Features (hairline-ruled cells, like the blog catalog) */
+.feature-grid {
+  gap: 1px;
+  background: color-mix(in srgb, var(--aw-color-text-default) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--aw-color-text-default) 12%, transparent);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.feature-item {
+  background: var(--aw-color-bg-page);
+  padding: 1.75rem 1.75rem 2rem;
+  margin: 0 !important;
+  max-width: none;
+  transition: background 0.2s ease;
+}
+.feature-item:hover {
+  background: color-mix(in srgb, var(--aw-color-primary) 7%, var(--aw-color-bg-page));
+}
