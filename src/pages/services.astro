@@ -1,5 +1,6 @@
 ---
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import { facts } from "~/data/facts";
 import Features from '~/components/widgets/Features.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Steps from '~/components/widgets/Steps.astro';
@@ -7,7 +8,7 @@ import Stats from '~/components/widgets/Stats.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'Services — Blackwell Systems',
+  title: 'Services',
   description:
     'Independent, evidence-first technical judgment: fractional CTO, technical due diligence, and AI cost optimization. Every recommendation backed by published work and verifiable on your own systems.',
 };
@@ -39,9 +40,9 @@ const CAL = 'https://cal.com/blackwell-systems';
   <Stats
     stats={[
       { title: 'Typical token savings', amount: '70-90%' },
-      { title: 'Monthly ecosystem downloads', amount: '150K+' },
-      { title: 'Upstream PRs merged', amount: '40+' },
-      { title: 'Open source projects', amount: '20+' },
+      { title: 'Monthly ecosystem downloads', amount: facts.downloads },
+      { title: 'Upstream PRs merged', amount: facts.prsMerged },
+      { title: 'Open source projects', amount: facts.ossProjects },
     ]}
   />
 

@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import { facts } from "~/data/facts";
 
 import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -152,9 +153,9 @@ const CAL = 'https://cal.com/blackwell-systems';
   <Stats
     stats={[
       { title: 'Typical token savings', amount: '70-90%' },
-      { title: 'Monthly ecosystem downloads', amount: '150K+' },
-      { title: 'Upstream PRs merged', amount: '40+' },
-      { title: 'Open source projects', amount: '20+' },
+      { title: 'Monthly ecosystem downloads', amount: facts.downloads },
+      { title: 'Upstream PRs merged', amount: facts.prsMerged },
+      { title: 'Open source projects', amount: facts.ossProjects },
     ]}
   />
 
@@ -261,7 +262,7 @@ const CAL = 'https://cal.com/blackwell-systems';
   <Features
     id="contributions"
     tagline="Upstream"
-    title="40+ merged PRs across the ecosystem"
+    title={`${facts.prsMerged} merged PRs across the ecosystem`}
     subtitle="Bug fixes, hardening, and features merged into open-source projects across the stack. #6 all-time contributor to mcp-go."
     items={[
       {
@@ -311,7 +312,7 @@ const CAL = 'https://cal.com/blackwell-systems';
     stats={[
       { title: 'GCF comprehension (frontier models)', amount: '100%' },
       { title: 'GCF comprehension evals', amount: '2,500+' },
-      { title: 'GCF implementations', amount: '7' },
+      { title: 'GCF implementations', amount: facts.gcfImplementations },
       { title: 'Lossless round-trips', amount: '43B+' },
     ]}
   />

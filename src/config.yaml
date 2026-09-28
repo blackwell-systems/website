@@ -8,7 +8,7 @@ site:
 metadata:
   title:
     default: Blackwell Systems
-    template: '%s — Blackwell Systems'
+    template: '%s · Blackwell Systems'
   description: "Independent, evidence-first technical judgment: fractional CTO, technical due diligence, and AI cost optimization. Built and proven in the open by Dayna Blackwell, founder of Blackwell Systems."
   robots:
     index: true

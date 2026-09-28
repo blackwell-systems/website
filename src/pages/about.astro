@@ -1,5 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
+import { facts } from "~/data/facts";
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Features from '~/components/widgets/Features.astro';
@@ -7,7 +8,7 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
-  title: 'About — Blackwell Systems',
+  title: 'About',
   description:
     'Blackwell Systems is the practice of Dayna Blackwell: AI infrastructure built and proven in the open, and the evidence-first technical judgment that comes from it.',
 };
@@ -36,10 +37,10 @@ const CAL = 'https://cal.com/blackwell-systems';
 
   <Stats
     stats={[
-      { title: 'GCF implementations', amount: '7' },
-      { title: 'Upstream PRs merged', amount: '40+' },
-      { title: 'Research papers', amount: '9' },
-      { title: 'Monthly ecosystem downloads', amount: '150K+' },
+      { title: 'GCF implementations', amount: facts.gcfImplementations },
+      { title: 'Upstream PRs merged', amount: facts.prsMerged },
+      { title: 'Research papers', amount: facts.papers },
+      { title: 'Monthly ecosystem downloads', amount: facts.downloads },
     ]}
   />
 

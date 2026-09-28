@@ -190,3 +190,11 @@ body::after {
     color-mix(in srgb, var(--aw-color-bg-page) 28%, transparent) 45%,
     color-mix(in srgb, var(--aw-color-bg-page) 40%, transparent) 100%);
 }
+
+/* No scroll-triggered fade-ins: content present immediately (evidence-first restraint) */
+.motion-safe\:md\:opacity-0,
+[class*="animate-fade"] {
+  opacity: 1 !important;
+  animation: none !important;
+  transform: none !important;
+}
