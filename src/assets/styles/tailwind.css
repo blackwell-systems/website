@@ -116,3 +116,50 @@
 .dd *:first-child {
   margin-top: 0;
 }
+
+/* ===================== Editorial layer: unify with the blog ===================== */
+
+/* Header nav: mono uppercase + double-underline sweep (matches blog header) */
+#header nav > ul > li > a,
+#header nav > ul > li > button {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 500;
+  position: relative;
+}
+#header nav > ul > li > a::before,
+#header nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  height: 2px;
+  background: var(--aw-color-primary);
+  transform: scaleX(0);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+#header nav > ul > li > a::before { top: calc(50% - 9px); transform-origin: left; }
+#header nav > ul > li > a::after  { top: calc(50% + 7px); transform-origin: right; }
+#header nav > ul > li > a:hover::before,
+#header nav > ul > li > a:hover::after { transform: scaleX(1); }
+
+/* Section eyebrow -> "## LABEL" mono band (Headline.astro tagline) */
+.section-eyebrow {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.06em !important;
+  font-size: 0.78rem !important;
+}
+.section-eyebrow::before { content: "## "; color: var(--aw-color-primary); }
+
+/* Footer headings: mono uppercase */
+.footer-heading {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: var(--aw-color-text-muted);
+}
