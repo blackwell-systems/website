@@ -16,23 +16,6 @@ const CAL = 'https://cal.com/blackwell-systems';
 ---
 
 <Layout metadata={metadata}>
-  <Hero
-    actions={[
-      { variant: 'primary', text: 'See services', href: '/services', icon: 'tabler:bolt' },
-      { variant: 'secondary', text: 'Get in touch', href: '/contact' },
-    ]}
-  >
-    <Fragment slot="title">
-      I build the systems, then <span class="text-accent dark:text-white">publish the proof</span>.
-    </Fragment>
-
-    <Fragment slot="subtitle">
-      Blackwell Systems is my practice. I design and ship AI infrastructure in the open, measure it, and
-      document the results. Then I bring that same evidence-first standard to the technical decisions other
-      teams need to get right.
-    </Fragment>
-  </Hero>
-
   <Stats
     stats={[
       { title: 'GCF implementations', amount: facts.gcfImplementations },
