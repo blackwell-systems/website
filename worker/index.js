@@ -9,31 +9,41 @@
 // Vars (in wrangler.toml):
 //   TO_EMAIL, FROM_ADDRESS, FROM_NAME, ZEPTO_API_URL
 
-const ALLOWED_ORIGIN = 'https://blackwell-systems.com';
+// Sites whose forms post here. The form on blackwell-systems.com is
+// same-origin; golang-agents.com (the AI Agents in Go guide) posts
+// cross-origin, and its name goes in the email's subject.
+const ALLOWED_ORIGINS = {
+  'https://blackwell-systems.com': '',
+  'https://golang-agents.com': 'golang-agents.com',
+  'https://www.golang-agents.com': 'golang-agents.com',
+};
+const DEFAULT_ORIGIN = 'https://blackwell-systems.com';
 
-function corsHeaders() {
+function corsHeaders(origin) {
   return {
-    'Access-Control-Allow-Origin': ALLOWED_ORIGIN,
+    'Access-Control-Allow-Origin': origin in ALLOWED_ORIGINS ? origin : DEFAULT_ORIGIN,
+    Vary: 'Origin',
     'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Max-Age': '86400',
   };
 }
 
-function json(obj, status) {
+function json(obj, status, origin) {
   return new Response(JSON.stringify(obj), {
     status,
-    headers: { 'Content-Type': 'application/json', ...corsHeaders() },
+    headers: { 'Content-Type': 'application/json', ...corsHeaders(origin) },
   });
 }
 
 export default {
   async fetch(request, env) {
+    const origin = request.headers.get('Origin') || '';
     if (request.method === 'OPTIONS') {
-      return new Response(null, { status: 204, headers: corsHeaders() });
+      return new Response(null, { status: 204, headers: corsHeaders(origin) });
     }
     if (request.method !== 'POST') {
-      return json({ ok: false, error: 'Method not allowed' }, 405);
+      return json({ ok: false, error: 'Method not allowed' }, 405, origin);
     }
 
     // Per-IP burst limit (on top of Turnstile). Shed abusive load early.
@@ -41,7 +51,7 @@ export default {
     if (env.RATE_LIMITER) {
       const { success } = await env.RATE_LIMITER.limit({ key: ip });
       if (!success) {
-        return json({ ok: false, error: 'Too many attempts. Please wait a minute and try again.' }, 429);
+        return json({ ok: false, error: 'Too many attempts. Please wait a minute and try again.' }, 429, origin);
       }
     }
 
@@ -49,7 +59,7 @@ export default {
     try {
       body = await request.json();
     } catch {
-      return json({ ok: false, error: 'Invalid request.' }, 400);
+      return json({ ok: false, error: 'Invalid request.' }, 400, origin);
     }
 
     const name = String(body.name || '').trim();
@@ -60,17 +70,17 @@ export default {
 
     // Honeypot: bots fill the hidden field, people never see it. Accept and drop.
     if (honeypot) {
-      return json({ ok: true }, 200);
+      return json({ ok: true }, 200, origin);
     }
 
     if (!name || !email || !message) {
-      return json({ ok: false, error: 'Please fill in every field.' }, 400);
+      return json({ ok: false, error: 'Please fill in every field.' }, 400, origin);
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      return json({ ok: false, error: 'That email address looks off.' }, 400);
+      return json({ ok: false, error: 'That email address looks off.' }, 400, origin);
     }
     if (message.length > 5000) {
-      return json({ ok: false, error: 'Message is too long.' }, 400);
+      return json({ ok: false, error: 'Message is too long.' }, 400, origin);
     }
 
     // Verify Turnstile.
@@ -85,7 +95,7 @@ export default {
     });
     const verify = await verifyRes.json();
     if (!verify.success) {
-      return json({ ok: false, error: 'Spam check failed. Please try again.' }, 400);
+      return json({ ok: false, error: 'Spam check failed. Please try again.' }, 400, origin);
     }
 
     // Deliver via ZeptoMail (Zoho transactional email).
@@ -100,7 +110,9 @@ export default {
         from: { address: env.FROM_ADDRESS, name: env.FROM_NAME },
         to: [{ email_address: { address: env.TO_EMAIL } }],
         reply_to: [{ address: email, name: name }],
-        subject: `New inquiry from ${name}`,
+        subject: ALLOWED_ORIGINS[origin]
+          ? `New inquiry from ${name} (${ALLOWED_ORIGINS[origin]})`
+          : `New inquiry from ${name}`,
         textbody: `From: ${name} <${email}>\n\n${message}`,
       }),
     });
@@ -110,10 +122,11 @@ export default {
       console.error('ZeptoMail error', sendRes.status, detail);
       return json(
         { ok: false, error: 'Could not send right now. Please email dayna@blackwell-systems.com directly.' },
-        502
+        502,
+        origin
       );
     }
 
-    return json({ ok: true }, 200);
+    return json({ ok: true }, 200, origin);
   },
 };
