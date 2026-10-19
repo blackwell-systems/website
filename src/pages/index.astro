@@ -6,6 +6,7 @@ import Hero from '~/components/widgets/Hero.astro';
 import Features from '~/components/widgets/Features.astro';
 import Content from '~/components/widgets/Content.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import AdoptedBy from '~/components/widgets/AdoptedBy.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
@@ -157,9 +158,11 @@ const CAL = 'https://cal.com/blackwell-systems';
       { title: 'Typical token savings', amount: '70-90%' },
       { title: 'Monthly ecosystem downloads', amount: facts.downloads },
       { title: 'Upstream PRs merged', amount: facts.prsMerged },
-      { title: 'Open source projects', amount: facts.ossProjects },
+      { title: `Repositories using our open source, across ${facts.adopterOrgs} organizations`, amount: facts.adopterRepos },
     ]}
   />
+
+  <AdoptedBy />
 
   <!-- The offer: services + the entry door -->
   <Features
