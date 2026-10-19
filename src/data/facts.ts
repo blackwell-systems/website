@@ -3,7 +3,7 @@
 // Run ../blog/scripts/check-facts.sh to detect drift across every surface.
 export const facts = {
   downloads: '150K+',
-  totalDownloads: 'Nearly 1M',
+  totalDownloads: '1M+',
   ossProjects: '20+',
   prsMerged: '50+',
   papers: '11',
