@@ -164,6 +164,43 @@ const CAL = 'https://cal.com/blackwell-systems';
 
   <AdoptedBy />
 
+  <!-- New book -->
+  <Content
+    id="book"
+    tagline="New book"
+    title="Building AI Agents in Go"
+    subtitle="From the agent loop to production. Learn how AI agents work by building one in Go, from the first request to production, using the standard library."
+    items={[
+      {
+        title: 'Build the loop yourself',
+        description:
+          'Start with a 30-line loop and finish with a crash-triage agent for a real Go web service that reproduces each bug, fixes it, and files one issue per cause. net/http, encoding/json/v2 and context, no framework.',
+      },
+      {
+        title: 'Measured, not asserted',
+        description:
+          'One sentence in a tool description decided the first move in 79 of 80 replies. Parallel agents were no faster than one, at about 25 to 60 percent more cost. 910 crash scenarios, 0 duplicate actions with idempotency keys.',
+      },
+      {
+        title: '17 chapters, 776 pages',
+        description:
+          'Tool calling, context, streaming, MCP, evals across models, sandboxing and prompt-injection defenses, crash-safe runs. Every example runs offline with no API key. $29, every update of this edition free.',
+      },
+    ]}
+    callToAction={{ text: 'See the book and the free 27-page sample', href: 'https://golang-agents.com', target: '_blank' }}
+  >
+    <Fragment slot="image">
+      <img
+        src="/images/building-ai-agents-in-go.jpg"
+        alt="Building AI Agents in Go, by Dayna Blackwell"
+        width="1200"
+        height="630"
+        class="mx-auto w-full rounded-lg shadow-lg"
+        loading="lazy"
+      />
+    </Fragment>
+  </Content>
+
   <!-- The offer: services + the entry door -->
   <Features
     id="services"
