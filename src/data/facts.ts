@@ -13,7 +13,7 @@ export const facts = {
   mcpAssertDls: '55,000+',
   adopterRepos: '120+',
   adopterOrgs: '60+',
-  gcfDls: '580K+',
+  gcfDls: '630K+',
   gcfOutsideProjects: '28',
   agentLspTools: '65',
 } as const;
