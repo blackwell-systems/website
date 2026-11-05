@@ -9,7 +9,7 @@ export const facts = {
   papers: '11',
   gcfImplementations: '7',
   gcfEvals: '2,500+',
-  secretManagerDls: '275K+',
+  secretManagerDls: '350K+',
   mcpAssertDls: '55,000+',
   adopterRepos: '120+',
   adopterOrgs: '60+',
